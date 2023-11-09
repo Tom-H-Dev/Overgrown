@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29412796202f16141a48d4b929af9958, type: 3}
   m_Name: Demo Stats
   m_EditorClassIdentifier: 
-  name: demo
   baseHP: 5
   baseMP: 5
-  baseATK: 2
+  baseATK: 1
   baseDEF: 1

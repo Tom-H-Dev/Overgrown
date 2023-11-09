@@ -27,8 +27,9 @@ public class PlayerBattleStats : MonoBehaviour
     public void ChangeHpFromOther(float hpDifference)
     {
         if (hpDifference >= curHP)//dead
-        { 
-
+        {
+            Debug.Log("YOU DIED!!! :(:(:(:(:(:(");
+            curHP = 0;
         }
         else
         {

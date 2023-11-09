@@ -7,8 +7,6 @@ using UnityEngine;
 
 public class EnemeyStats : ScriptableObject
 {
-    public string name;
-
     public float baseHP;
     public float baseMP;
     public float baseATK;

@@ -18,4 +18,5 @@ public class GameManager : MonoBehaviour
     public bool canMovePlayer = true;
     public bool hasBeenSelectedEnemy= false;
     public int selectedEnemy = 0;
+    [SerializeField] public GameObject combatCanvas;
 }

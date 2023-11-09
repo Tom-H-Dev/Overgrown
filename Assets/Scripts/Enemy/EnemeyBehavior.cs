@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemeyBehavior : MonoBehaviour
 {
@@ -10,9 +11,11 @@ public class EnemeyBehavior : MonoBehaviour
 
     [SerializeField] private GameObject _whatEnemyMenu;
 
+    [SerializeField] private Image _healthbar;
+    private int _healthbarPixelMultiplier = 40;
+
     private void Start()
     {
-        stats.name = stats.name + "_" + id;
         curHP = stats.baseHP;
         curMP = stats.baseMP;
         curATK = stats.baseATK;
@@ -23,12 +26,26 @@ public class EnemeyBehavior : MonoBehaviour
 
     public void ChangeHpFromOther(float hpDifference)
     {
-        if (hpDifference >= curHP) 
+        if (hpDifference >= curHP)
         { // dead
             TurnManager.instance.currentActiveEnemies.Remove(gameObject);
+            gameObject.SetActive(false);
+
+            if (TurnManager.instance.currentActiveEnemies.Count <= 0)
+            {
+                Debug.Log("You Won combat!");
+
+                GameManager.instance.canMovePlayer = true;
+                GameManager.instance.combatCanvas.SetActive(false);
+            }
+
             Debug.Log("Enemy died");
         }
-        else curHP -= hpDifference;
+        else
+        {
+            curHP -= hpDifference;
+            _healthbar.rectTransform.sizeDelta = new Vector2(curHP * _healthbarPixelMultiplier, 50);
+        }
     }
 
     public IEnumerator EnemyAttackRoutine()
@@ -48,5 +65,6 @@ public class EnemeyBehavior : MonoBehaviour
     public void Attack()
     {
         Debug.Log("Enemy used attack!");
+        PlayerBattleStats.instance.ChangeHpFromOther(curATK);
     }
 }
