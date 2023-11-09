@@ -8,6 +8,10 @@ public class Attack : MonoBehaviour
 {
     public Button attackButton;
     public TextMeshProUGUI turnText;
+
+
+    [Header("UI elements attack order")]
+    [SerializeField] private GameObject _whatEnemy;
     public void AttackButton()
     {
         StartCoroutine(AttackFunctionality());
@@ -15,9 +19,10 @@ public class Attack : MonoBehaviour
 
     public IEnumerator AttackFunctionality()
     {
-        TurnManager.instance.turns = PlayerTurns.enemyturn;
+        _whatEnemy.SetActive(true);
+
         attackButton.interactable = false;
-        turnText.text = "Enemy Turn!";
         yield return null;
     }
+
 }
