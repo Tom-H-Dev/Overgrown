@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerBattleStats : MonoBehaviour
 {
@@ -18,6 +19,9 @@ public class PlayerBattleStats : MonoBehaviour
     public float curHP;
     public float curMP;
 
+    [SerializeField] private Image _healthbar;
+    private int _healthbarPixelMultiplier = 30;
+
     private void Start()
     {
         curHP = baseHP;
@@ -34,6 +38,7 @@ public class PlayerBattleStats : MonoBehaviour
         else
         {
             curHP -= hpDifference;
+            _healthbar.rectTransform.sizeDelta = new Vector2(curHP * _healthbarPixelMultiplier, 50);
         }
     }
 }
