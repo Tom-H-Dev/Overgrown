@@ -19,4 +19,9 @@ public class GameManager : MonoBehaviour
     public bool hasBeenSelectedEnemy= false;
     public int selectedEnemy = 0;
     [SerializeField] public GameObject combatCanvas;
+
+    public void ChangePlayerMovePermission(bool l_value)
+    {
+        canMovePlayer = l_value;
+    }
 }
