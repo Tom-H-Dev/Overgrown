@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemeyBehavior : MonoBehaviour
+public class EnemyBehavior : MonoBehaviour
 {
     [SerializeField] private EnemeyStats stats;
     public int id;
-    [SerializeField] private float curHP, curMP, curATK, curDEF;
+    [SerializeField] private float _curHP, _curMP, _curATK, _curDEF, _curSPD;
 
     [SerializeField] private GameObject _whatEnemyMenu;
 
@@ -16,17 +16,18 @@ public class EnemeyBehavior : MonoBehaviour
 
     private void Start()
     {
-        curHP = stats.baseHP;
-        curMP = stats.baseMP;
-        curATK = stats.baseATK;
-        curDEF = stats.baseDEF;
+        _curHP = stats.baseHP;
+        _curMP = stats.baseMP;
+        _curATK = stats.baseATK;
+        _curDEF = stats.baseDEF;
+        _curSPD = stats.baseSPD;
 
         TurnManager.instance.currentActiveEnemies.Add(gameObject);
     }
 
     public void ChangeHpFromOther(float hpDifference)
     {
-        if (hpDifference >= curHP)
+        if (hpDifference >= _curHP)
         { // dead
             TurnManager.instance.currentActiveEnemies.Remove(gameObject);
             gameObject.SetActive(false);
@@ -43,14 +44,15 @@ public class EnemeyBehavior : MonoBehaviour
         }
         else
         {
-            curHP -= hpDifference;
-            _healthbar.rectTransform.sizeDelta = new Vector2(curHP * _healthbarPixelMultiplier, 50);
+            _curHP -= hpDifference;
+            _healthbar.rectTransform.sizeDelta = new Vector2(_curHP * _healthbarPixelMultiplier, 50);
         }
     }
 
     public IEnumerator EnemyAttackRoutine()
     {
         yield return new WaitForSeconds(1);
+
         Attack();
 
         _whatEnemyMenu.SetActive(true);
@@ -65,6 +67,6 @@ public class EnemeyBehavior : MonoBehaviour
     public void Attack()
     {
         Debug.Log("Enemy used attack!");
-        PlayerBattleStats.instance.ChangeHpFromOther(curATK);
+        PlayerBattleStats.instance.ChangeHpFromOther(_curATK);
     }
 }

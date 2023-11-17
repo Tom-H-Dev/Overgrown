@@ -9,7 +9,7 @@ public class TurnManager : MonoBehaviour
     public static TurnManager instance;
     private void Awake()
     {
-        
+
         if (instance != null)
             Destroy(instance);
         else instance = this;
@@ -21,17 +21,23 @@ public class TurnManager : MonoBehaviour
     public List<GameObject> currentActiveEnemies = new List<GameObject>();
     [SerializeField] private GameObject _attackChooseMenu;
 
+
+    private void Update()
+    {
+        turnText.text = turns.ToString();
+    }
+
     public IEnumerator NextTurn()
     {
         GameManager.instance.selectedEnemy = 0;
         GameManager.instance.hasBeenSelectedEnemy = false;
+
         turns = PlayerTurns.enemyturn;
-        
-        turnText.text = "Enemy Turn!";
+
         yield return null;
         for (int i = 0; i < currentActiveEnemies.Count; i++)
         {
-            StartCoroutine(currentActiveEnemies[i].GetComponent<EnemeyBehavior>().EnemyAttackRoutine());
+            StartCoroutine(currentActiveEnemies[i].GetComponent<EnemyBehavior>().EnemyAttackRoutine());
         }
     }
 }

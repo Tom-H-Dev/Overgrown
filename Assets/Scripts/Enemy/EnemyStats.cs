@@ -11,4 +11,5 @@ public class EnemeyStats : ScriptableObject
     public float baseMP;
     public float baseATK;
     public float baseDEF;
+    public float baseSPD;
 }

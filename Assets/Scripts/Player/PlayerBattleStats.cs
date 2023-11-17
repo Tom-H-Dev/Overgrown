@@ -13,24 +13,27 @@ public class PlayerBattleStats : MonoBehaviour
     }
     #endregion
 
-    private float baseHP = 10;
-    private float baseMP = 10;
+    private float _baseHP = 10;
+    private float _baseMP = 10;
+    private float _baseSPD = 10;
 
     public float curHP;
     public float curMP;
+    public float curSPD;
 
     [SerializeField] private Image _healthbar;
     private int _healthbarPixelMultiplier = 30;
 
     private void Start()
     {
-        curHP = baseHP;
-        curMP = baseMP;
+        curHP = _baseHP;
+        curMP = _baseMP;
+        curSPD = _baseSPD;
     }
 
     public void ChangeHpFromOther(float hpDifference)
     {
-        if (hpDifference >= curHP)//dead
+        if (hpDifference >= curHP) //dead
         {
             Debug.Log("YOU DIED!!! :(:(:(:(:(:(");
             curHP = 0;

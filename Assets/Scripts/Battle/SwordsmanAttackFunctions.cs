@@ -11,7 +11,7 @@ public class SwordsmanAttackFunctions : MonoBehaviour
     {
         Debug.Log("Attack1 Has been used!");
         GameObject foundObject = FindObjectById(GameManager.instance.selectedEnemy);
-        EnemeyBehavior enemybehavior = foundObject.GetComponent<EnemeyBehavior>();
+        EnemyBehavior enemybehavior = foundObject.GetComponent<EnemyBehavior>();
         enemybehavior.ChangeHpFromOther(atkDmg);
         StartCoroutine(TurnManager.instance.NextTurn());
 
@@ -31,7 +31,7 @@ public class SwordsmanAttackFunctions : MonoBehaviour
     {
         foreach (GameObject obj in TurnManager.instance.currentActiveEnemies)
         {
-            if (obj.GetComponent<EnemeyBehavior>().id == id)
+            if (obj.GetComponent<EnemyBehavior>().id == id)
             {
                 return obj;
             }
