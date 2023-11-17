@@ -24,6 +24,7 @@ public class PlayerInventory : MonoBehaviour
             _playerInventory.SetActive(true);
             GameManager.instance.ChangePlayerMovePermission(false);
             _isMenuActive = true;
+            OnChangePotionAmount();
         }
 
         if (Input.GetKeyDown(KeyCode.Q))
@@ -41,11 +42,13 @@ public class PlayerInventory : MonoBehaviour
 
     public void OnChangePotionAmount()
     {
-        foreach (GameObject potions in inventoryPotions)
+        foreach (GameObject l_inventoryPotions in inventoryPotions)
         {
-            if (potions.GetComponent<Potion>().potionAmount >= 1)
+            if (l_inventoryPotions.GetComponent<Potion>().potionAmount >= 1)
             {
-                potions.GetComponent<Potion>().potionCard.SetActive(true);
+                Potion l_potion = l_inventoryPotions.GetComponent<Potion>();
+                l_potion.potionCard.SetActive(true);
+                l_potion.potionAmountText.text = l_potion.potionAmount + "x";
             }
         }
     }
