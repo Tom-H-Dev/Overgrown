@@ -8,7 +8,8 @@ public abstract class Potion : MonoBehaviour
     [Header("Stats")]
     [SerializeField] protected string p_potionName;
     public int potionAmount;
-    protected int p_potionStatIncrease;
+    public int potionStatIncrease;
+    protected string potionType;
     public GameObject potionCard;
     public TextMeshProUGUI potionAmountText;
 
@@ -26,6 +27,7 @@ public abstract class Potion : MonoBehaviour
     public virtual void ItemClickEvent()
     {
         InfoPageItem.instance.itemTitle.text = p_potionName; 
+        InfoPageItem.instance.statIncreaseText.text = "+" + potionStatIncrease + " " + potionType;
     }
 
 }

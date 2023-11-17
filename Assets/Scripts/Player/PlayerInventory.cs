@@ -17,6 +17,9 @@ public class PlayerInventory : MonoBehaviour
     [SerializeField] private GameObject _playerInventory;
     private bool _isMenuActive = false;
     [SerializeField] HealthPotion healthPotion;
+    [SerializeField] SpeedPotion speedPotion;
+    [SerializeField] DefensePotion defensePotion;
+    [SerializeField] StrengthPotion strengthPotion;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.B) && !_isMenuActive)
@@ -29,7 +32,8 @@ public class PlayerInventory : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            AddInventoryItemManager.instance.ChangeHealthPotion(2);
+            AddInventoryItemManager.instance.potions = speedPotion;
+            AddInventoryItemManager.instance.ChangePotionAmount(2);
 
             OnChangePotionAmount();
         }

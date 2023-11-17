@@ -19,6 +19,7 @@ public class InfoPageItem : MonoBehaviour
     public TextMeshProUGUI itemTitle;
     public TextMeshProUGUI itemDescription;
     public Image itemImage;
+    public TextMeshProUGUI statIncreaseText;
 
     public void ItemUseButton()
     {
