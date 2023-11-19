@@ -6,9 +6,22 @@ using UnityEngine.UI;
 
 public class PlayerClassChoice : MonoBehaviour
 {
+    #region singleton
+    public static PlayerClassChoice instance;
+    private void Awake()
+    {
+        instance = this;
+    }
+    #endregion
+
     public GameObject objectToAddScriptTo;
     [SerializeField] private Image _expProgressBar;
+    public Animator animator;
 
+    /// <summary>
+    /// This is a function which adds a specific script based on the choice that the player make on what class the player wants to play
+    /// </summary>
+    /// <param name="l_scriptName"></This parameter is the name of the script that needs to be added to the player >
     private void PlayerCombatClassChoice(string l_scriptName)
     {
         MonoScript script = (MonoScript)Resources.Load(l_scriptName, typeof(MonoScript));

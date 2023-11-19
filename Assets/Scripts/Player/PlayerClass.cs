@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -33,18 +32,30 @@ public abstract class PlayerClass : MonoBehaviour
         {
             if (l_expIncrease > l_currentExpNeededForLevelUp)
             {
+                //StartCoroutine(XpBarStateChange("xpbarup"));
                 Debug.Log("increase level");
                 int l_expOvershot = l_expIncrease - (int)l_currentExpNeededForLevelUp;
                 StartCoroutine(ExpProgressBarLerp(1));
 
                 StartCoroutine(LevelUpClass(l_expOvershot));
+                //StartCoroutine(XpBarStateChange("xpbardown"));
+            }
+            else
+            {
+                //StartCoroutine(XpBarStateChange("xpbarup"));
+                Debug.Log("increase level");
+                StartCoroutine(ExpProgressBarLerp(1));
+                StartCoroutine(LevelUpClass(0));
+                //StartCoroutine(XpBarStateChange("xpbardown"));
             }
         }
         else
         {
+            //StartCoroutine(XpBarStateChange("xpbarup"));
             playerExp += l_expIncrease;
             float l_currentExpProgress = playerExp / expAmountNeededForLevelUp;
             StartCoroutine(ExpProgressBarLerp(l_currentExpProgress));
+            //StartCoroutine(XpBarStateChange("xpbardown"));
         }
 
     }
@@ -69,11 +80,23 @@ public abstract class PlayerClass : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         Debug.Log("Level Up!");
         playerLevel++;
+        
+        UIManager.instance.OnOpenLevelUpMenu();
+        UIManager.instance.levelReachText.text = "Level " + playerLevel + " Reached!";
+
+        #region playerxp overshot
         expAmountNeededForLevelUp = Mathf.RoundToInt(expAmountNeededForLevelUp * 1.5f);
         playerExp = 0;
         expProgress.rectTransform.localScale = new Vector3(0, 1, 1);
         playerExp += l_expOvershot;
         float l_currentExpProgress = playerExp / expAmountNeededForLevelUp;
         StartCoroutine(ExpProgressBarLerp(l_currentExpProgress));
+        #endregion
+    }
+
+    public IEnumerator XpBarStateChange(string l_type)
+    {
+        PlayerClassChoice.instance.animator.SetTrigger(l_type);
+        yield return new WaitForSeconds(0.5f);
     }
 }
