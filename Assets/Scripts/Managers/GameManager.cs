@@ -19,4 +19,22 @@ public class GameManager : MonoBehaviour
     public bool hasBeenSelectedEnemy= false;
     public int selectedEnemy = 0;
     [SerializeField] public GameObject combatCanvas;
+
+    public void ChangePlayerMovePermission(bool l_value)
+    {
+        canMovePlayer = l_value;
+    }
+
+    public GameObject FindObjectById(int id)
+    {
+        foreach (GameObject obj in TurnManager.instance.currentActiveEnemies)
+        {
+            if (obj.GetComponent<EnemeyBehavior>().id == id)
+            {
+                return obj;
+            }
+        }
+
+        return null;
+    }
 }
