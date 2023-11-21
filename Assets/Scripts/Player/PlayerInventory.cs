@@ -16,10 +16,10 @@ public class PlayerInventory : MonoBehaviour
 
     [SerializeField] private GameObject _playerInventory;
     private bool _isMenuActive = false;
-    [SerializeField] HealthPotion healthPotion;
-    [SerializeField] SpeedPotion speedPotion;
-    [SerializeField] DefensePotion defensePotion;
-    [SerializeField] StrengthPotion strengthPotion;
+    public HealthPotion healthPotion;
+    public SpeedPotion speedPotion;
+    public DefensePotion defensePotion;
+    public StrengthPotion strengthPotion;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.B) && !_isMenuActive)

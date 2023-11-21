@@ -37,9 +37,7 @@ public class EnemyBehavior : MonoBehaviour
             {
                 Debug.Log("You Won combat!");
 
-                GameManager.instance.canMovePlayer = true;
-                GameManager.instance.combatCanvas.SetActive(false);
-                _turnManager.SetActive(false);
+                GameManager.instance.OnCombatComplete();
             }
 
             Debug.Log("Enemy died");

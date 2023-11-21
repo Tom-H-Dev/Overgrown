@@ -10,7 +10,7 @@ public abstract class PlayerClass : MonoBehaviour
     public int playerLevel = 1;
     public float expAmountNeededForLevelUp = 100;
     public int playerExp = 0;
-    private const int expOrbAmount = 5;
+    private const int expOrbAmount = 1;
     public PlayerClassStats playerStats;
 
     [Header("Player Level UI")]
