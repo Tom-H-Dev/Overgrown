@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static TMPro.Examples.ObjectSpin;
 
 public class SpeedPotion : Potion
 {
@@ -11,16 +10,23 @@ public class SpeedPotion : Potion
         potionType = "Speed";
         potionStatIncrease = 5;
         potionCard = gameObject;
+        potionDescription = "Speed Potion: Grants a temporary burst of enhanced speed and agility when consumed.";
     }
 
-    protected override void OnPotionUse()
+    public override void OnPotionUse()
     {
         base.OnPotionUse();
-        
+        InfoPageItem.instance.potionScript = this;
+        PlayerBattleStats.instance.playerStats.speed += 5;
     }
 
     public override void ChangePotionAmount(int l_increaseAmount)
     {
         base.ChangePotionAmount(l_increaseAmount);
+    }
+
+    public override void ItemClickEvent()
+    {
+        base.ItemClickEvent();
     }
 }

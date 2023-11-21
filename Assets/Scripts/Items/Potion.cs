@@ -12,11 +12,13 @@ public abstract class Potion : MonoBehaviour
     protected string potionType;
     public GameObject potionCard;
     public TextMeshProUGUI potionAmountText;
+    public string potionDescription;
 
 
-    protected virtual void OnPotionUse()
+    public virtual void OnPotionUse()
     {
-
+        potionAmount--;
+        PlayerInventory.instance.OnChangePotionAmount();
     }
 
     public virtual void ChangePotionAmount(int l_increaseAmount)
@@ -28,6 +30,9 @@ public abstract class Potion : MonoBehaviour
     {
         InfoPageItem.instance.itemTitle.text = p_potionName; 
         InfoPageItem.instance.statIncreaseText.text = "+" + potionStatIncrease + " " + potionType;
+        InfoPageItem.instance.itemDescription.text = potionDescription;
+        InfoPageItem.instance.potionType = potionType;
+        InfoPageItem.instance.potionScript = this;
     }
 
 }

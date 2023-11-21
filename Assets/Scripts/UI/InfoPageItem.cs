@@ -20,10 +20,13 @@ public class InfoPageItem : MonoBehaviour
     public TextMeshProUGUI itemDescription;
     public Image itemImage;
     public TextMeshProUGUI statIncreaseText;
+    public Potion potionScript;
+    public string potionType;
 
     public void ItemUseButton()
     {
-
+        string l_potionType = potionType;
+        Debug.Log(potionScript);
+        potionScript.OnPotionUse();
     }
-
 }

@@ -24,6 +24,8 @@ public class PlayerBattleStats : MonoBehaviour
     [SerializeField] private Image _healthbar;
     private int _healthbarPixelMultiplier = 30;
 
+    public PlayerClassStats playerStats;
+
     private void Start()
     {
         curHP = _baseHP;
