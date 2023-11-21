@@ -27,7 +27,6 @@ public class PlayerClassChoice : MonoBehaviour
     public void ClassChoice(string l_classScriptName)
     {
         GameManager.instance.ChangePlayerMovePermission(true);
-        objectToAddScriptTo.GetComponent<PlayerClass>().expProgress = _expProgressBar;
 
         switch(l_classScriptName)
         {
@@ -42,5 +41,6 @@ public class PlayerClassChoice : MonoBehaviour
                 break;
         }
 
+        objectToAddScriptTo.GetComponent<PlayerClass>().expProgress = _expProgressBar;
     }
 }
