@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     {
         foreach (GameObject obj in TurnManager.instance.currentActiveEnemies)
         {
-            if (obj.GetComponent<EnemeyBehavior>().id == id)
+            if (obj.GetComponent<EnemyBehavior>().id == id)
             {
                 return obj;
             }

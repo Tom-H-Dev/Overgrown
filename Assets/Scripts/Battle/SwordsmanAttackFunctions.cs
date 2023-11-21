@@ -12,7 +12,7 @@ public class SwordsmanAttackFunctions : MonoBehaviour
     {
         Debug.Log("Attack1 Has been used!");
         GameObject foundObject = GameManager.instance.FindObjectById(GameManager.instance.selectedEnemy);
-        EnemeyBehavior enemybehavior = foundObject.GetComponent<EnemeyBehavior>();
+        EnemyBehavior enemybehavior = foundObject.GetComponent<EnemyBehavior>();
         enemybehavior.ChangeHpFromOther(atkDmg);
         StartCoroutine(TurnManager.instance.NextTurn());
 
