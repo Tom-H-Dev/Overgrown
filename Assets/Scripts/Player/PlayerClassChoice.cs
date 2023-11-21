@@ -17,6 +17,7 @@ public class PlayerClassChoice : MonoBehaviour
     public GameObject objectToAddScriptTo;
     [SerializeField] private Image _expProgressBar;
     public Animator animator;
+    public PlayerClassStats playerStats;
 
     private void Start()
     {
@@ -41,6 +42,8 @@ public class PlayerClassChoice : MonoBehaviour
                 break;
         }
 
-        objectToAddScriptTo.GetComponent<PlayerClass>().expProgress = _expProgressBar;
+        PlayerClass l_object = objectToAddScriptTo.GetComponent<PlayerClass>();
+        l_object.expProgress = _expProgressBar;
+        l_object.playerStats = playerStats;
     }
 }

@@ -859,10 +859,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: bbab40d9dfb614d4cb7aa356a11a286a, type: 2}
   id: 1
-  curHP: 0
-  curMP: 0
-  curATK: 0
-  curDEF: 0
+  _curHP: 0
+  _curMP: 0
+  _curATK: 0
+  _curDEF: 0
+  _curSPD: 0
   _whatEnemyMenu: {fileID: 1554388714}
   _healthbar: {fileID: 1322108278}
 --- !u!1 &202085897
@@ -2237,6 +2238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   curHP: 0
   curMP: 0
+  curSPD: 0
   _healthbar: {fileID: 1293948668}
 --- !u!1 &467249109
 GameObject:
@@ -9009,10 +9011,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: bbab40d9dfb614d4cb7aa356a11a286a, type: 2}
   id: 2
-  curHP: 0
-  curMP: 0
-  curATK: 0
-  curDEF: 0
+  _curHP: 0
+  _curMP: 0
+  _curATK: 0
+  _curDEF: 0
+  _curSPD: 0
   _whatEnemyMenu: {fileID: 1554388714}
   _healthbar: {fileID: 1402927577}
 --- !u!1 &1713126146
@@ -11512,6 +11515,12 @@ PrefabInstance:
       objectReference: {fileID: 859026223}
     - target: {fileID: 5281752262002090425, guid: 29be7519a4e88094c8343fdc60d51d1f,
         type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 11400000, guid: f17fa4ba33624d54d8a69dbbc1d771af,
+        type: 2}
+    - target: {fileID: 5281752262002090425, guid: 29be7519a4e88094c8343fdc60d51d1f,
+        type: 3}
       propertyPath: _expProgressBar
       value: 
       objectReference: {fileID: 1561345384}
@@ -11597,9 +11606,49 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 391625099719019804, guid: cdf8a6043e9c51046ab9f6240152d0f1,
         type: 3}
+      propertyPath: speedNew
+      value: 
+      objectReference: {fileID: 950076046}
+    - target: {fileID: 391625099719019804, guid: cdf8a6043e9c51046ab9f6240152d0f1,
+        type: 3}
+      propertyPath: speedOld
+      value: 
+      objectReference: {fileID: 981405269}
+    - target: {fileID: 391625099719019804, guid: cdf8a6043e9c51046ab9f6240152d0f1,
+        type: 3}
+      propertyPath: healthNew
+      value: 
+      objectReference: {fileID: 2026827615}
+    - target: {fileID: 391625099719019804, guid: cdf8a6043e9c51046ab9f6240152d0f1,
+        type: 3}
+      propertyPath: healthOld
+      value: 
+      objectReference: {fileID: 16671956}
+    - target: {fileID: 391625099719019804, guid: cdf8a6043e9c51046ab9f6240152d0f1,
+        type: 3}
+      propertyPath: defenseNew
+      value: 
+      objectReference: {fileID: 1810956954}
+    - target: {fileID: 391625099719019804, guid: cdf8a6043e9c51046ab9f6240152d0f1,
+        type: 3}
+      propertyPath: defenseOld
+      value: 
+      objectReference: {fileID: 1823268085}
+    - target: {fileID: 391625099719019804, guid: cdf8a6043e9c51046ab9f6240152d0f1,
+        type: 3}
       propertyPath: levelUpMenu
       value: 
       objectReference: {fileID: 202085897}
+    - target: {fileID: 391625099719019804, guid: cdf8a6043e9c51046ab9f6240152d0f1,
+        type: 3}
+      propertyPath: strengthNew
+      value: 
+      objectReference: {fileID: 35499248}
+    - target: {fileID: 391625099719019804, guid: cdf8a6043e9c51046ab9f6240152d0f1,
+        type: 3}
+      propertyPath: strengthOld
+      value: 
+      objectReference: {fileID: 1781443495}
     - target: {fileID: 391625099719019804, guid: cdf8a6043e9c51046ab9f6240152d0f1,
         type: 3}
       propertyPath: levelReachText
@@ -11659,6 +11708,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UI Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780158951160953614, guid: cdf8a6043e9c51046ab9f6240152d0f1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
