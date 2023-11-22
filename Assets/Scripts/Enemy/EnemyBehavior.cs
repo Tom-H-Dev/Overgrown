@@ -6,15 +6,16 @@ using UnityEngine.UI;
 public class EnemyBehavior : MonoBehaviour
 {
     [SerializeField] private EnemeyStats stats;
+    [SerializeField] private GameObject _turnManager;
     public int id;
-    [SerializeField] private float _curHP, _curMP, _curATK, _curDEF, _curSPD;
+    [SerializeField] public float _curHP, _curMP, _curATK, _curDEF, _curSPD;
 
     [SerializeField] private GameObject _whatEnemyMenu;
 
     [SerializeField] private Image _healthbar;
     private int _healthbarPixelMultiplier = 40;
 
-    private void Start()
+    private void OnEnable()
     {
         _curHP = stats.baseHP;
         _curMP = stats.baseMP;
@@ -36,8 +37,7 @@ public class EnemyBehavior : MonoBehaviour
             {
                 Debug.Log("You Won combat!");
 
-                GameManager.instance.canMovePlayer = true;
-                GameManager.instance.combatCanvas.SetActive(false);
+                GameManager.instance.OnCombatComplete();
             }
 
             Debug.Log("Enemy died");

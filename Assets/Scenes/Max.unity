@@ -425,6 +425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: bbab40d9dfb614d4cb7aa356a11a286a, type: 2}
+  _turnManager: {fileID: 0}
   id: 3
   _curHP: 0
   _curMP: 0
@@ -446,6 +447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _combatMenuStuff: {fileID: 529613781}
+  _turnManager: {fileID: 1775989117}
 --- !u!65 &29382721
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1053,6 +1055,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _combatMenuStuff: {fileID: 529613781}
+  _turnManager: {fileID: 0}
 --- !u!65 &299172164
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1544,6 +1547,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: bbab40d9dfb614d4cb7aa356a11a286a, type: 2}
+  _turnManager: {fileID: 1775989117}
   id: 2
   _curHP: 0
   _curMP: 0
@@ -1850,6 +1854,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: bbab40d9dfb614d4cb7aa356a11a286a, type: 2}
+  _turnManager: {fileID: 1775989117}
   id: 1
   _curHP: 0
   _curMP: 0
@@ -1960,7 +1965,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 840828145}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.185285, y: -0.000000023414842, z: 0.000000004414863, w: 0.98268485}
+  m_LocalRotation: {x: 0.18528499, y: 4.7644113e-15, z: -1.6807419e-15, w: 0.98268485}
   m_LocalPosition: {x: 0, y: 4.91, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3799,7 +3804,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1541890736}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.185285, y: -0.000000023414842, z: 0.000000004414863, w: 0.98268485}
+  m_LocalRotation: {x: 0.18528499, y: 4.7644113e-15, z: -1.6807419e-15, w: 0.98268485}
   m_LocalPosition: {x: 0, y: 4.91, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3954,6 +3959,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1775989117 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6749558901364219814, guid: ddd6691fbc3a07c49ab005112c67f6eb,
+    type: 3}
+  m_PrefabInstance: {fileID: 2138831955}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1807072089
 GameObject:
   m_ObjectHideFlags: 0
@@ -4412,6 +4423,11 @@ PrefabInstance:
       objectReference: {fileID: 18166112}
     - target: {fileID: 2894056245619522487, guid: ddd6691fbc3a07c49ab005112c67f6eb,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2894056245619522487, guid: ddd6691fbc3a07c49ab005112c67f6eb,
+        type: 3}
       propertyPath: _attackChooseMenu
       value: 
       objectReference: {fileID: 456891109}
@@ -4419,6 +4435,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Turn Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6749558901364219814, guid: ddd6691fbc3a07c49ab005112c67f6eb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8940729835442317882, guid: ddd6691fbc3a07c49ab005112c67f6eb,
         type: 3}
@@ -4480,7 +4501,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 299172167}
-  - {fileID: 1012838832}
   - {fileID: 529613782}
   - {fileID: 1289487765}
   - {fileID: 1148008809}
@@ -4491,4 +4511,5 @@ SceneRoots:
   - {fileID: 1541890741}
   - {fileID: 840828147}
   - {fileID: 2138831955}
+  - {fileID: 1012838832}
   - {fileID: 29382724}

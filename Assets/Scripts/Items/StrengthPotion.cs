@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static TMPro.Examples.ObjectSpin;
 
 public class StrengthPotion : Potion
 {
@@ -11,16 +10,22 @@ public class StrengthPotion : Potion
         potionType = "Strength";
         potionStatIncrease = 5;
         potionCard = gameObject;
+        potionDescription = "Strength Potion: Temporarily enhances physical strength and power when consumed.";
     }
 
-    protected override void OnPotionUse()
+    public override void OnPotionUse()
     {
         base.OnPotionUse();
-        
+        InfoPageItem.instance.potionScript = this;
+        PlayerBattleStats.instance.playerStats.strength += 5;
     }
 
     public override void ChangePotionAmount(int l_increaseAmount)
     {
         base.ChangePotionAmount(l_increaseAmount);
+    }
+    public override void ItemClickEvent()
+    {
+        base.ItemClickEvent();
     }
 }

@@ -17,6 +17,12 @@ public class UIManager : MonoBehaviour
     [Header("Level Up UI")]
     public GameObject levelUpMenu;
     public TextMeshProUGUI levelReachText;
+    [Space]
+    public TextMeshProUGUI healthOld;
+    public TextMeshProUGUI strengthOld, speedOld, defenseOld;
+    [Space]
+    public TextMeshProUGUI healthNew;
+    public TextMeshProUGUI strengthNew, speedNew, defenseNew;
 
     public void OnOpenLevelUpMenu()
     {

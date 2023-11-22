@@ -37,4 +37,16 @@ public class GameManager : MonoBehaviour
 
         return null;
     }
+
+    public void OnCombatComplete()
+    {
+        canMovePlayer = true;
+        combatCanvas.SetActive(false);
+        TurnManager.instance.gameObject.SetActive(false);
+
+        PlayerClass l_player = FindObjectOfType<PlayerClass>();
+        l_player.ChangePlayerExp(10);
+        AddInventoryItemManager.instance.potions = PlayerInventory.instance.healthPotion;
+        AddInventoryItemManager.instance.ChangePotionAmount(2);
+    }
 }

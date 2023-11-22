@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static TMPro.Examples.ObjectSpin;
 
 public class HealthPotion : Potion
 {
@@ -11,9 +10,10 @@ public class HealthPotion : Potion
         potionType = "Health";
         potionStatIncrease = 5;
         potionCard = gameObject;
+        potionDescription = "Health Potion: Restores health and vitality when consumed.";
     }
 
-    protected override void OnPotionUse()
+    public override void OnPotionUse()
     {
         base.OnPotionUse();
         PlayerBattleStats.instance.ChangeHpFromOther(-potionStatIncrease);
@@ -22,5 +22,9 @@ public class HealthPotion : Potion
     public override void ChangePotionAmount(int l_increaseAmount)
     {
         base.ChangePotionAmount(l_increaseAmount);
+    }
+    public override void ItemClickEvent()
+    {
+        base.ItemClickEvent();
     }
 }

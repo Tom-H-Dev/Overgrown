@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,11 +10,17 @@ public abstract class PlayerClass : MonoBehaviour
     public int playerLevel = 1;
     public float expAmountNeededForLevelUp = 100;
     public int playerExp = 0;
-    private const int expOrbAmount = 5;
+    private const int expOrbAmount = 1;
+    public PlayerClassStats playerStats;
 
     [Header("Player Level UI")]
     public Image expProgress;
+    private UIManager uiManager;
 
+    private void Start()
+    {
+        uiManager = UIManager.instance;
+    }
 
     private void Update()
     {
@@ -77,13 +84,37 @@ public abstract class PlayerClass : MonoBehaviour
 
     public virtual IEnumerator LevelUpClass(int l_expOvershot)
     {
-        yield return new WaitForSeconds(0.5f);
-        Debug.Log("Level Up!");
         playerLevel++;
-        
-        UIManager.instance.OnOpenLevelUpMenu();
-        UIManager.instance.levelReachText.text = "Level " + playerLevel + " Reached!";
 
+        #region Stat Increase
+        uiManager.healthOld.text = "Health " + playerStats.health;
+        uiManager.speedOld.text = "Speed " + playerStats.speed;
+        uiManager.strengthOld.text = "Strength " + playerStats.strength;
+        uiManager.defenseOld.text = "Defense " + playerStats.defense;
+
+        FieldInfo[] fields = typeof(PlayerClassStats).GetFields(BindingFlags.Public | BindingFlags.Instance);
+        foreach (FieldInfo field in fields)
+        {
+            if (field.FieldType == typeof(float))
+            {
+                float originalValue = (float)field.GetValue(playerStats);
+
+                originalValue += 5;
+                field.SetValue(playerStats, originalValue);
+            }
+        }
+
+        uiManager.healthNew.text = playerStats.health.ToString();
+        uiManager.strengthNew.text = playerStats.strength.ToString();
+        uiManager.speedNew.text = playerStats.speed.ToString();
+        uiManager.defenseNew.text = playerStats.defense.ToString();
+        #endregion
+
+        uiManager.levelReachText.text = "Level " + playerLevel + " Reached!";
+
+        uiManager.OnOpenLevelUpMenu();
+
+        yield return new WaitForSeconds(0.5f);
         #region playerxp overshot
         expAmountNeededForLevelUp = Mathf.RoundToInt(expAmountNeededForLevelUp * 1.5f);
         playerExp = 0;
