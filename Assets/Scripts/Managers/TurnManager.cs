@@ -21,20 +21,22 @@ public class TurnManager : MonoBehaviour
     public List<GameObject> currentActiveEnemies = new List<GameObject>();
     [SerializeField] private GameObject _attackChooseMenu;
 
+    private PlayerBattleStats _battleStats;
     private EnemyBehavior _enemyBehavior;
-    private PlayerBattleStats _playerStats;
-
 
     private void Start()
     {
-        if (FindObjectOfType<PlayerBattleStats>().curSPD >= FindObjectOfType<EnemyBehavior>()._curSPD)
+        _battleStats = FindObjectOfType<PlayerBattleStats>();
+        _enemyBehavior = FindObjectOfType<EnemyBehavior>();
+
+        if (_battleStats.curSPD >= _enemyBehavior._curSPD)
         {
             turns = PlayerTurns.myturn;
-            print("Do be zoomin");
         }
         else
         {
             turns = PlayerTurns.enemyturn;
+            StartCoroutine(_enemyBehavior.EnemyAttackRoutine()); 
         }        
     }
 
