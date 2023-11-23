@@ -59,6 +59,7 @@ public class PlayerClassChoice : MonoBehaviour
                 break;
         }
 
+        AttackChoiceSystem.instance._player = objectToAddScriptTo.GetComponent<IPlayerClasses>();
         PlayerClass l_object = objectToAddScriptTo.GetComponent<PlayerClass>();
         l_object.expProgress = _expProgressBar;
         l_object.playerStats = playerStats;
