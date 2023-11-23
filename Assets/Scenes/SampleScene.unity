@@ -456,7 +456,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 19763569}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.18528499, y: 0.000000011186369, z: -0.0000000021091884, w: 0.98268485}
+  m_LocalRotation: {x: 0.185285, y: -0.000000023414842, z: 0.000000004414863, w: 0.98268485}
   m_LocalPosition: {x: 0, y: 4.91, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -864,7 +864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: bbab40d9dfb614d4cb7aa356a11a286a, type: 2}
-  _turnManager: {fileID: 0}
+  _turnManager: {fileID: 35416917}
   id: 1
   _curHP: 0
   _curMP: 0
@@ -1285,7 +1285,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.18528499, y: 0.000000011186369, z: -0.0000000021091884, w: 0.98268485}
+  m_LocalRotation: {x: 0.185285, y: -0.000000023414842, z: 0.000000004414863, w: 0.98268485}
   m_LocalPosition: {x: 0, y: 4.91, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6925,6 +6925,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turn Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 6749558901364219814, guid: ddd6691fbc3a07c49ab005112c67f6eb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8940729835442317882, guid: ddd6691fbc3a07c49ab005112c67f6eb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9289,7 +9294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: bbab40d9dfb614d4cb7aa356a11a286a, type: 2}
-  _turnManager: {fileID: 0}
+  _turnManager: {fileID: 35416917}
   id: 2
   _curHP: 0
   _curMP: 0
@@ -11434,6 +11439,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _combatMenuStuff: {fileID: 1084182152}
   _turnManager: {fileID: 35416917}
+  _enemyBehavior: {fileID: 0}
 --- !u!1001 &192339121893840319
 PrefabInstance:
   m_ObjectHideFlags: 0
