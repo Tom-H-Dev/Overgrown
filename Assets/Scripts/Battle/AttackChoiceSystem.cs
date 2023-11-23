@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class AttackChoiceSystem : MonoBehaviour
 {
-    private IPlayerClasses _player;
-    private void Start()
+    #region Singleton
+    public static AttackChoiceSystem instance;
+    private void Awake()
     {
-        _player = GetComponent<IPlayerClasses>();
+        //if (instance != null)
+        //    Destroy(instance);
+        //else instance = this;
+        instance = this;
     }
+    #endregion
+    public IPlayerClasses _player;
 
     public void BaseAttackChoice()
     {
