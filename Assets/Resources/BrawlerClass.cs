@@ -6,7 +6,11 @@ public class BrawlerClass : PlayerClass, IPlayerClasses
 {
     public void BaseAttack()
     {
-
+        Debug.Log("Attack1 Has been used!");
+        GameObject foundObject = GameManager.instance.FindObjectById(GameManager.instance.selectedEnemy);
+        EnemyBehavior enemybehavior = foundObject.GetComponent<EnemyBehavior>();
+        enemybehavior.ChangeHpFromOther(PlayerBattleStats.instance.playerStats.strength);
+        StartCoroutine(TurnManager.instance.NextTurn());
     }
 
     public void Defense()
