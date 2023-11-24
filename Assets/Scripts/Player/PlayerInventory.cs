@@ -29,14 +29,6 @@ public class PlayerInventory : MonoBehaviour
             _isMenuActive = true;
             OnChangePotionAmount();
         }
-
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            AddInventoryItemManager.instance.potions = speedPotion;
-            AddInventoryItemManager.instance.ChangePotionAmount(2);
-
-            OnChangePotionAmount();
-        }
     }
 
     public void ChangeMenuActive(bool l_value)
