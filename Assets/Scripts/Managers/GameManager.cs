@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     public int selectedEnemy = 0;
     [SerializeField] public GameObject combatCanvas;
 
+    public bool inInteractionArea = false;
+
     public void ChangePlayerMovePermission(bool l_value)
     {
         canMovePlayer = l_value;
