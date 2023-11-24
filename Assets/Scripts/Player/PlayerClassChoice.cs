@@ -38,24 +38,15 @@ public class PlayerClassChoice : MonoBehaviour
         {
             case "BrawlerClass":
                 objectToAddScriptTo.AddComponent<BrawlerClass>();
-                playerStats.health = _brawlerStats.health;
-                playerStats.speed = _brawlerStats.speed;
-                playerStats.strength = _brawlerStats.strength;
-                playerStats.defense = _brawlerStats.defense;
+                playerStats.CopyFrom(_brawlerStats);
                 break;
             case "AlchemistClass":
                 objectToAddScriptTo.AddComponent<AlchemistClass>();
-                playerStats.health = _alchemistStats.health;
-                playerStats.speed = _alchemistStats.speed;
-                playerStats.strength = _alchemistStats.strength;
-                playerStats.defense = _alchemistStats.defense;
+                playerStats.CopyFrom(_alchemistStats);
                 break;
             case "GunmanClass":
                 objectToAddScriptTo.AddComponent<GunmanClass>();
-                playerStats.health = _gunmanStats.health;
-                playerStats.speed = _gunmanStats.speed;
-                playerStats.strength = _gunmanStats.strength;
-                playerStats.defense = _gunmanStats.defense;
+                playerStats.CopyFrom(_gunmanStats);
                 break;
         }
 
