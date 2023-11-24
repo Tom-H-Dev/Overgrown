@@ -13,9 +13,7 @@ public class PlayerBattleStats : MonoBehaviour
     }
     #endregion
 
-    private float _baseHP = 10;
     private float _baseMP = 10;
-    private float _baseSPD = 10;
 
     public float curHP;
     public float curMP;
@@ -28,9 +26,9 @@ public class PlayerBattleStats : MonoBehaviour
 
     private void Start()
     {
-        curHP = _baseHP;
+        curHP = playerStats.health;
         curMP = _baseMP;
-        curSPD = _baseSPD;
+        curSPD = playerStats.speed;
     }
 
     public void ChangeHpFromOther(float hpDifference)
