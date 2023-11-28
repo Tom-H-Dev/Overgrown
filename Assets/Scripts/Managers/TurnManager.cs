@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TurnManager : MonoBehaviour
 {
@@ -25,8 +26,11 @@ public class TurnManager : MonoBehaviour
     private EnemyBehavior _enemyBehavior;
 
     [Header("Player Battle UI")]
-    [SerializeField] private GameObject _attackLevel1;
-    [SerializeField] private GameObject _attackLevel2, _attackLevel4, _attackLevel6, _defense;
+    [SerializeField] private GameObject attackLevel1;
+    [SerializeField] private GameObject attackLevel2, attackLevel4, attackLevel6, defense;
+    [Space]
+    public Button battackLevel1;
+    public Button battackLevel2, battackLevel4, battackLevel6, bdefense;
 
     [Header("Player")]
     [SerializeField] private GameObject _player;
@@ -44,8 +48,15 @@ public class TurnManager : MonoBehaviour
         {
             turns = PlayerTurns.enemyturn;
             StartCoroutine(_enemyBehavior.EnemyAttackRoutine()); 
-        }        
+        }
+
+        battackLevel1 = attackLevel1.GetComponent<Button>();
+        battackLevel2 = attackLevel2.GetComponent<Button>();
+        battackLevel4 = attackLevel4.GetComponent<Button>();
+        battackLevel6 = attackLevel6.GetComponent<Button>();
+        bdefense = defense.GetComponent<Button>();
     }
+
 
     private void Update()
     {
@@ -65,6 +76,33 @@ public class TurnManager : MonoBehaviour
             StartCoroutine(currentActiveEnemies[i].GetComponent<EnemyBehavior>().EnemyAttackRoutine());
         }
 
+        PlayerClass l_player = _player.GetComponent<PlayerClass>();
+        if (l_player.attack2OnCooldown)
+        {
+            l_player.turnsLeftToRecharge2--;
+            if (l_player.turnsLeftToRecharge2 <= 0)
+            {
+                battackLevel2.interactable = true;
+            }
+        }
+        else if (l_player.attack4OnCooldown)
+        {
+            l_player.turnsLeftToRecharge4--;
+            if (l_player.turnsLeftToRecharge4 <= 0)
+            {
+                battackLevel4.interactable = true;
+            }
+        }
+        else if (l_player.attack6OnCooldown)
+        {
+            l_player.turnsLeftToRecharge6--;
+            if (l_player.turnsLeftToRecharge6 <= 0)
+            {
+                battackLevel6.interactable = true;
+            }
+        }
+
+
 
     }
 
@@ -75,53 +113,53 @@ public class TurnManager : MonoBehaviour
         switch (l_player.playerLevel)
         {
             case 1:
-                _attackLevel1.SetActive(true);
-                _attackLevel2.SetActive(false);
-                _attackLevel4.SetActive(false);
-                _attackLevel6.SetActive(false);
-                _defense.SetActive(true);
+                attackLevel1.SetActive(true);
+                attackLevel2.SetActive(false);
+                attackLevel4.SetActive(false);
+                attackLevel6.SetActive(false);
+                defense.SetActive(true);
                 break;
             case 2:
-                _attackLevel1.SetActive(true);
-                _attackLevel2.SetActive(true);
-                _attackLevel4.SetActive(false);
-                _attackLevel6.SetActive(false);
-                _defense.SetActive(true);
+                attackLevel1.SetActive(true);
+                attackLevel2.SetActive(true);
+                attackLevel4.SetActive(false);
+                attackLevel6.SetActive(false);
+                defense.SetActive(true);
                 break;
             case 3:
-                _attackLevel1.SetActive(true);
-                _attackLevel2.SetActive(true);
-                _attackLevel4.SetActive(false);
-                _attackLevel6.SetActive(false);
-                _defense.SetActive(true);
+                attackLevel1.SetActive(true);
+                attackLevel2.SetActive(true);
+                attackLevel4.SetActive(false);
+                attackLevel6.SetActive(false);
+                defense.SetActive(true);
                 break;
             case 4:
-                _attackLevel1.SetActive(true);
-                _attackLevel2.SetActive(true);
-                _attackLevel4.SetActive(true);
-                _attackLevel6.SetActive(false);
-                _defense.SetActive(true);
+                attackLevel1.SetActive(true);
+                attackLevel2.SetActive(true);
+                attackLevel4.SetActive(true);
+                attackLevel6.SetActive(false);
+                defense.SetActive(true);
                 break;
             case 5:
-                _attackLevel1.SetActive(true);
-                _attackLevel2.SetActive(true);
-                _attackLevel4.SetActive(true);
-                _attackLevel6.SetActive(false);
-                _defense.SetActive(true);
+                attackLevel1.SetActive(true);
+                attackLevel2.SetActive(true);
+                attackLevel4.SetActive(true);
+                attackLevel6.SetActive(false);
+                defense.SetActive(true);
                 break;
             case 6:
-                _attackLevel1.SetActive(true);
-                _attackLevel2.SetActive(true);
-                _attackLevel4.SetActive(true);
-                _attackLevel6.SetActive(true);
-                _defense.SetActive(true);
+                attackLevel1.SetActive(true);
+                attackLevel2.SetActive(true);
+                attackLevel4.SetActive(true);
+                attackLevel6.SetActive(true);
+                defense.SetActive(true);
                 break;
             case >= 7:
-                _attackLevel1.SetActive(true);
-                _attackLevel2.SetActive(true);
-                _attackLevel4.SetActive(true);
-                _attackLevel6.SetActive(true);
-                _defense.SetActive(true);
+                attackLevel1.SetActive(true);
+                attackLevel2.SetActive(true);
+                attackLevel4.SetActive(true);
+                attackLevel6.SetActive(true);
+                defense.SetActive(true);
                 break;
         }
     }

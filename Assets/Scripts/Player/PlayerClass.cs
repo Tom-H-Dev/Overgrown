@@ -17,6 +17,19 @@ public abstract class PlayerClass : MonoBehaviour
     public Image expProgress;
     private UIManager uiManager;
 
+    [Header("Attack System")]
+    public bool attack2OnCooldown = false;
+    public bool attack4OnCooldown = false;
+    public bool attack6OnCooldown = false;
+
+    public int rechargeTime2 = 2;
+    public int rechargeTime4 = 2;
+    public int rechargeTime6 = 2;
+
+    public int turnsLeftToRecharge2;
+    public int turnsLeftToRecharge4;
+    public int turnsLeftToRecharge6;
+
     private void Start()
     {
         uiManager = UIManager.instance;
