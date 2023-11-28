@@ -456,7 +456,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 19763569}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.18528499, y: 4.7644113e-15, z: -1.6807419e-15, w: 0.98268485}
+  m_LocalRotation: {x: 0.18528502, y: -0.00000003274307, z: 0.000000006173699, w: 0.98268485}
   m_LocalPosition: {x: 0, y: 4.91, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1285,7 +1285,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.18528499, y: 4.7644113e-15, z: -1.6807419e-15, w: 0.98268485}
+  m_LocalRotation: {x: 0.18528502, y: -0.00000003274307, z: 0.000000006173699, w: 0.98268485}
   m_LocalPosition: {x: 0, y: 4.91, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2314,7 +2314,6 @@ GameObject:
   m_Component:
   - component: {fileID: 461990540}
   - component: {fileID: 461990539}
-  - component: {fileID: 461990541}
   - component: {fileID: 461990542}
   m_Layer: 0
   m_Name: Attack System
@@ -2353,18 +2352,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &461990541
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 461990538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75c7734b5454c104795ca4091a335d40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &461990542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6907,9 +6894,39 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2894056245619522487, guid: ddd6691fbc3a07c49ab005112c67f6eb,
         type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 1973754640}
+    - target: {fileID: 2894056245619522487, guid: ddd6691fbc3a07c49ab005112c67f6eb,
+        type: 3}
+      propertyPath: _defense
+      value: 
+      objectReference: {fileID: 752632002}
+    - target: {fileID: 2894056245619522487, guid: ddd6691fbc3a07c49ab005112c67f6eb,
+        type: 3}
       propertyPath: turnText
       value: 
       objectReference: {fileID: 1001267352}
+    - target: {fileID: 2894056245619522487, guid: ddd6691fbc3a07c49ab005112c67f6eb,
+        type: 3}
+      propertyPath: _attackLevel1
+      value: 
+      objectReference: {fileID: 467249109}
+    - target: {fileID: 2894056245619522487, guid: ddd6691fbc3a07c49ab005112c67f6eb,
+        type: 3}
+      propertyPath: _attackLevel2
+      value: 
+      objectReference: {fileID: 1780681308}
+    - target: {fileID: 2894056245619522487, guid: ddd6691fbc3a07c49ab005112c67f6eb,
+        type: 3}
+      propertyPath: _attackLevel4
+      value: 
+      objectReference: {fileID: 576440661}
+    - target: {fileID: 2894056245619522487, guid: ddd6691fbc3a07c49ab005112c67f6eb,
+        type: 3}
+      propertyPath: _attackLevel6
+      value: 
+      objectReference: {fileID: 2041092748}
     - target: {fileID: 2894056245619522487, guid: ddd6691fbc3a07c49ab005112c67f6eb,
         type: 3}
       propertyPath: _attackChooseMenu
@@ -8976,7 +8993,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1664349094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11604,6 +11621,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _combatMenuStuff: {fileID: 1084182152}
   _turnManager: {fileID: 35416917}
+  _enemy1: {fileID: 114204381}
+  _enemy2: {fileID: 1684573089}
+  _attackStartButton: {fileID: 1664349094}
+  _attackScript: {fileID: 461990539}
+  _enemyStats: {fileID: 11400000, guid: bbab40d9dfb614d4cb7aa356a11a286a, type: 2}
 --- !u!1001 &192339121893840319
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12269,6 +12291,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 356152907483741229, guid: 5e32b003cf673324baaaa4b38b63b931,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2893421054527081959, guid: 5e32b003cf673324baaaa4b38b63b931,
         type: 3}
       propertyPath: _animator

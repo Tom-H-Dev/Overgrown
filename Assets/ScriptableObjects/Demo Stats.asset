@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71a20b9be5a0dc740ab68a5a2fcd4ae1, type: 3}
   m_Name: Demo Stats
   m_EditorClassIdentifier: 
-  baseHP: 5
+  baseHP: 15
   baseMP: 5
   baseATK: 1
   baseDEF: 1
