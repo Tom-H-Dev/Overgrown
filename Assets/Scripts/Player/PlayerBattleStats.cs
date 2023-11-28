@@ -43,7 +43,7 @@ public class PlayerBattleStats : MonoBehaviour
             curHP -= l_hpDifference;
             Debug.Log("Base = " + playerStats.health);
             Debug.Log("%% " + (curHP / playerStats.health) * 100);
-            _healthbar.rectTransform.sizeDelta = new Vector2(((curHP / playerStats.health) * 100) * 3, 50);
+            _healthbar.rectTransform.sizeDelta = new Vector2((curHP / playerStats.health) * 300, 50);
         }
     }
 }

@@ -33,6 +33,8 @@ public class StartBattleManager : MonoBehaviour
         for (int i = 0; i < TurnManager.instance.currentActiveEnemies.Count; i++)
         {
             TurnManager.instance.currentActiveEnemies[i].GetComponent<EnemyBehavior>().SetEnemyStatsVariable(_enemyStats);
+            TurnManager.instance.currentActiveEnemies[i].GetComponent<EnemyBehavior>().ChangeHpFromOther(0);
+            PlayerBattleStats.instance.ChangeHpFromOther(0);
         }
 
 

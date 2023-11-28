@@ -13,7 +13,6 @@ public class EnemyBehavior : MonoBehaviour
     [SerializeField] private GameObject _whatEnemyMenu;
 
     [SerializeField] private Image _healthbar;
-    private int _healthbarPixelMultiplier = 40;
 
     private void OnEnable()
     {
@@ -45,7 +44,7 @@ public class EnemyBehavior : MonoBehaviour
         else
         {
             _curHP -= hpDifference;
-            _healthbar.rectTransform.sizeDelta = new Vector2(((_curHP / stats.baseHP) * 100) * 2, 50);
+            _healthbar.rectTransform.sizeDelta = new Vector2((_curHP / stats.baseHP) * 200, 50);
         }
     }
 

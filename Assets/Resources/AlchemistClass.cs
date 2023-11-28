@@ -33,7 +33,14 @@ public class AlchemistClass : PlayerClass, IPlayerClasses
     }
     public void Level4Attack()
     {
-
+        Debug.Log("Attack4 Has been used!");
+        GameObject foundObject = GameManager.instance.FindObjectById(GameManager.instance.selectedEnemy);
+        EnemyBehavior enemybehavior = foundObject.GetComponent<EnemyBehavior>();
+        enemybehavior.ChangeHpFromOther(PlayerBattleStats.instance.playerStats.strength);
+        attack4OnCooldown = true;
+        turnsLeftToRecharge2 = rechargeTime4 + 1;
+        TurnManager.instance.battackLevel4.interactable = false;
+        StartCoroutine(TurnManager.instance.NextTurn());
     }
     public void Level6Attack()
     {

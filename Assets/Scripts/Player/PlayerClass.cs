@@ -23,7 +23,7 @@ public abstract class PlayerClass : MonoBehaviour
     public bool attack6OnCooldown = false;
 
     public int rechargeTime2 = 2;
-    public int rechargeTime4 = 2;
+    public int rechargeTime4 = 4;
     public int rechargeTime6 = 2;
 
     public int turnsLeftToRecharge2;
