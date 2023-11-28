@@ -45,3 +45,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelUpMenu: {fileID: 0}
+  levelReachText: {fileID: 0}
+  healthOld: {fileID: 0}
+  strengthOld: {fileID: 0}
+  speedOld: {fileID: 0}
+  defenseOld: {fileID: 0}
+  healthNew: {fileID: 0}
+  strengthNew: {fileID: 0}
+  speedNew: {fileID: 0}
+  defenseNew: {fileID: 0}
