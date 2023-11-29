@@ -32,5 +32,6 @@ public class HoverOverWhatEnemyButtons : MonoBehaviour, IPointerEnterHandler, IP
         GameManager.instance.hasBeenSelectedEnemy = true;
         arrowEnemy.SetActive(true);
         GameManager.instance.selectedEnemy = enemyNumber;
+        TurnManager.instance.ChangeAttackListFromLevelUp();
     }
 }

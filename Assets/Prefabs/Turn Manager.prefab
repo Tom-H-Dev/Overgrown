@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8940729835442317882
 Transform:
   m_ObjectHideFlags: 0
@@ -48,3 +48,14 @@ MonoBehaviour:
   turnText: {fileID: 0}
   currentActiveEnemies: []
   _attackChooseMenu: {fileID: 0}
+  attackLevel1: {fileID: 0}
+  attackLevel2: {fileID: 0}
+  attackLevel4: {fileID: 0}
+  attackLevel6: {fileID: 0}
+  defense: {fileID: 0}
+  battackLevel1: {fileID: 0}
+  battackLevel2: {fileID: 0}
+  battackLevel4: {fileID: 0}
+  battackLevel6: {fileID: 0}
+  bdefense: {fileID: 0}
+  _player: {fileID: 0}

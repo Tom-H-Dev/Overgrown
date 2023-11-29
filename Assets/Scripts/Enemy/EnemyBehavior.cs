@@ -13,17 +13,16 @@ public class EnemyBehavior : MonoBehaviour
     [SerializeField] private GameObject _whatEnemyMenu;
 
     [SerializeField] private Image _healthbar;
-    private int _healthbarPixelMultiplier = 40;
 
     private void OnEnable()
     {
-        _curHP = stats.baseHP;
-        _curMP = stats.baseMP;
-        _curATK = stats.baseATK;
-        _curDEF = stats.baseDEF;
-        _curSPD = stats.baseSPD;
-
         TurnManager.instance.currentActiveEnemies.Add(gameObject);
+    }
+
+    public void SetEnemyStatsVariable(EnemeyStats l_stats)
+    {
+        stats = l_stats;
+        SetBattleStats();
     }
 
     public void ChangeHpFromOther(float hpDifference)
@@ -45,7 +44,7 @@ public class EnemyBehavior : MonoBehaviour
         else
         {
             _curHP -= hpDifference;
-            _healthbar.rectTransform.sizeDelta = new Vector2(_curHP * _healthbarPixelMultiplier, 50);
+            _healthbar.rectTransform.sizeDelta = new Vector2((_curHP / stats.baseHP) * 200, 50);
         }
     }
 
@@ -68,5 +67,14 @@ public class EnemyBehavior : MonoBehaviour
     {
         Debug.Log("Enemy used attack!");
         PlayerBattleStats.instance.ChangeHpFromOther(_curATK);
+    }
+
+    public void SetBattleStats()
+    {
+        _curHP = stats.baseHP;
+        _curMP = stats.baseMP;
+        _curATK = stats.baseATK;
+        _curDEF = stats.baseDEF;
+        _curSPD = stats.baseSPD;
     }
 }

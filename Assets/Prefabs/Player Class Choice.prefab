@@ -47,4 +47,7 @@ MonoBehaviour:
   objectToAddScriptTo: {fileID: 0}
   _expProgressBar: {fileID: 0}
   animator: {fileID: 0}
-  playerStats: {fileID: 0}
+  playerStats: {fileID: 11400000, guid: f17fa4ba33624d54d8a69dbbc1d771af, type: 2}
+  _brawlerStats: {fileID: 11400000, guid: e9c3e70af642b794086e8ff70ff2d7b2, type: 2}
+  _gunmanStats: {fileID: 11400000, guid: e3886a86721421844b61f0e1f1f4d9f5, type: 2}
+  _alchemistStats: {fileID: 11400000, guid: c7272a8914d309c41ab60ace95aabbe3, type: 2}

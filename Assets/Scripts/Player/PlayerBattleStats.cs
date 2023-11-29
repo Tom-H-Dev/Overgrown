@@ -13,9 +13,7 @@ public class PlayerBattleStats : MonoBehaviour
     }
     #endregion
 
-    private float _baseHP = 10;
     private float _baseMP = 10;
-    private float _baseSPD = 10;
 
     public float curHP;
     public float curMP;
@@ -28,22 +26,29 @@ public class PlayerBattleStats : MonoBehaviour
 
     private void Start()
     {
-        curHP = _baseHP;
+        curHP = playerStats.health;
         curMP = _baseMP;
-        curSPD = _baseSPD;
+        curSPD = playerStats.speed;
     }
 
-    public void ChangeHpFromOther(float hpDifference)
+    public void ChangeHpFromOther(float l_hpDifference)
     {
-        if (hpDifference >= curHP) //dead
+        if (l_hpDifference >= curHP) //dead
         {
             Debug.Log("YOU DIED!!! :(:(:(:(:(:(");
             curHP = 0;
         }
+        else if (l_hpDifference == 0)
+        {
+            curHP = playerStats.health;
+            _healthbar.rectTransform.sizeDelta = new Vector2((curHP / playerStats.health) * 300, 50);
+        }
         else
         {
-            curHP -= hpDifference;
-            _healthbar.rectTransform.sizeDelta = new Vector2(curHP * _healthbarPixelMultiplier, 50);
+            curHP -= l_hpDifference;
+            Debug.Log("Base = " + playerStats.health);
+            Debug.Log("%% " + (curHP / playerStats.health) * 100);
+            _healthbar.rectTransform.sizeDelta = new Vector2((curHP / playerStats.health) * 300, 50);
         }
     }
 }
