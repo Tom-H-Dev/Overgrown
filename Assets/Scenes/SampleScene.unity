@@ -456,7 +456,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 19763569}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.18528499, y: 4.7644113e-15, z: -1.6807419e-15, w: 0.98268485}
+  m_LocalRotation: {x: 0.18528502, y: -0.00000003274307, z: 0.000000006173699, w: 0.98268485}
   m_LocalPosition: {x: 0, y: 4.91, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1285,7 +1285,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.18528499, y: 4.7644113e-15, z: -1.6807419e-15, w: 0.98268485}
+  m_LocalRotation: {x: 0.18528502, y: -0.00000003274307, z: 0.000000006173699, w: 0.98268485}
   m_LocalPosition: {x: 0, y: 4.91, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2314,7 +2314,6 @@ GameObject:
   m_Component:
   - component: {fileID: 461990540}
   - component: {fileID: 461990539}
-  - component: {fileID: 461990541}
   - component: {fileID: 461990542}
   m_Layer: 0
   m_Name: Attack System
@@ -2353,18 +2352,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &461990541
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 461990538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75c7734b5454c104795ca4091a335d40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &461990542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6907,9 +6894,39 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2894056245619522487, guid: ddd6691fbc3a07c49ab005112c67f6eb,
         type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 1973754640}
+    - target: {fileID: 2894056245619522487, guid: ddd6691fbc3a07c49ab005112c67f6eb,
+        type: 3}
+      propertyPath: defense
+      value: 
+      objectReference: {fileID: 752632002}
+    - target: {fileID: 2894056245619522487, guid: ddd6691fbc3a07c49ab005112c67f6eb,
+        type: 3}
       propertyPath: turnText
       value: 
       objectReference: {fileID: 1001267352}
+    - target: {fileID: 2894056245619522487, guid: ddd6691fbc3a07c49ab005112c67f6eb,
+        type: 3}
+      propertyPath: attackLevel1
+      value: 
+      objectReference: {fileID: 467249109}
+    - target: {fileID: 2894056245619522487, guid: ddd6691fbc3a07c49ab005112c67f6eb,
+        type: 3}
+      propertyPath: attackLevel2
+      value: 
+      objectReference: {fileID: 1780681308}
+    - target: {fileID: 2894056245619522487, guid: ddd6691fbc3a07c49ab005112c67f6eb,
+        type: 3}
+      propertyPath: attackLevel4
+      value: 
+      objectReference: {fileID: 576440661}
+    - target: {fileID: 2894056245619522487, guid: ddd6691fbc3a07c49ab005112c67f6eb,
+        type: 3}
+      propertyPath: attackLevel6
+      value: 
+      objectReference: {fileID: 2041092748}
     - target: {fileID: 2894056245619522487, guid: ddd6691fbc3a07c49ab005112c67f6eb,
         type: 3}
       propertyPath: _attackChooseMenu
@@ -6919,11 +6936,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Turn Manager
-      objectReference: {fileID: 0}
-    - target: {fileID: 6749558901364219814, guid: ddd6691fbc3a07c49ab005112c67f6eb,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8940729835442317882, guid: ddd6691fbc3a07c49ab005112c67f6eb,
         type: 3}
@@ -8976,7 +8988,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1664349094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10790,11 +10802,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f38e529275f6a8043a18bfa637d2ab1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1973754653
+--- !u!114 &1973754653 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 4942088699776184686, guid: d906e136a0162404e970703fae6d1e67,
+    type: 3}
+  m_PrefabInstance: {fileID: 192339121893840319}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1973754640}
   m_Enabled: 1
@@ -11604,6 +11616,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _combatMenuStuff: {fileID: 1084182152}
   _turnManager: {fileID: 35416917}
+  _enemy1: {fileID: 114204381}
+  _enemy2: {fileID: 1684573089}
+  _attackStartButton: {fileID: 1664349094}
+  _attackScript: {fileID: 461990539}
+  _enemyStats: {fileID: 11400000, guid: bbab40d9dfb614d4cb7aa356a11a286a, type: 2}
 --- !u!1001 &192339121893840319
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11715,11 +11732,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8808457582429694464, guid: d906e136a0162404e970703fae6d1e67,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1973754653}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d906e136a0162404e970703fae6d1e67, type: 3}
 --- !u!1001 &920482662932475326
 PrefabInstance:
@@ -12162,30 +12175,6 @@ PrefabInstance:
       objectReference: {fileID: 859026223}
     - target: {fileID: 5281752262002090425, guid: 29be7519a4e88094c8343fdc60d51d1f,
         type: 3}
-      propertyPath: playerStats
-      value: 
-      objectReference: {fileID: 11400000, guid: f17fa4ba33624d54d8a69dbbc1d771af,
-        type: 2}
-    - target: {fileID: 5281752262002090425, guid: 29be7519a4e88094c8343fdc60d51d1f,
-        type: 3}
-      propertyPath: _gunmanStats
-      value: 
-      objectReference: {fileID: 11400000, guid: e3886a86721421844b61f0e1f1f4d9f5,
-        type: 2}
-    - target: {fileID: 5281752262002090425, guid: 29be7519a4e88094c8343fdc60d51d1f,
-        type: 3}
-      propertyPath: _brawlerStats
-      value: 
-      objectReference: {fileID: 11400000, guid: e9c3e70af642b794086e8ff70ff2d7b2,
-        type: 2}
-    - target: {fileID: 5281752262002090425, guid: 29be7519a4e88094c8343fdc60d51d1f,
-        type: 3}
-      propertyPath: _alchemistStats
-      value: 
-      objectReference: {fileID: 11400000, guid: c7272a8914d309c41ab60ace95aabbe3,
-        type: 2}
-    - target: {fileID: 5281752262002090425, guid: 29be7519a4e88094c8343fdc60d51d1f,
-        type: 3}
       propertyPath: _expProgressBar
       value: 
       objectReference: {fileID: 1561345384}
@@ -12446,11 +12435,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UI Manager
-      objectReference: {fileID: 0}
-    - target: {fileID: 4780158951160953614, guid: cdf8a6043e9c51046ab9f6240152d0f1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

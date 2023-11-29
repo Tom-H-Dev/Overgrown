@@ -31,17 +31,24 @@ public class PlayerBattleStats : MonoBehaviour
         curSPD = playerStats.speed;
     }
 
-    public void ChangeHpFromOther(float hpDifference)
+    public void ChangeHpFromOther(float l_hpDifference)
     {
-        if (hpDifference >= curHP) //dead
+        if (l_hpDifference >= curHP) //dead
         {
             Debug.Log("YOU DIED!!! :(:(:(:(:(:(");
             curHP = 0;
         }
+        else if (l_hpDifference + curHP >= playerStats.health)
+        {
+            curHP = playerStats.health;
+            _healthbar.rectTransform.sizeDelta = new Vector2((curHP / playerStats.health) * 300, 50);
+        }
         else
         {
-            curHP -= hpDifference;
-            _healthbar.rectTransform.sizeDelta = new Vector2(curHP * _healthbarPixelMultiplier, 50);
+            curHP -= l_hpDifference;
+            Debug.Log("Base = " + playerStats.health);
+            Debug.Log("%% " + (curHP / playerStats.health) * 100);
+            _healthbar.rectTransform.sizeDelta = new Vector2((curHP / playerStats.health) * 300, 50);
         }
     }
 }
