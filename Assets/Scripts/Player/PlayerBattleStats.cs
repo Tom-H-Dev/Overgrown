@@ -38,7 +38,7 @@ public class PlayerBattleStats : MonoBehaviour
             Debug.Log("YOU DIED!!! :(:(:(:(:(:(");
             curHP = 0;
         }
-        else if (l_hpDifference + curHP >= playerStats.health)
+        else if (l_hpDifference == 0)
         {
             curHP = playerStats.health;
             _healthbar.rectTransform.sizeDelta = new Vector2((curHP / playerStats.health) * 300, 50);
