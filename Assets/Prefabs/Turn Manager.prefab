@@ -44,3 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deda14e3d2e815e4fad6f33ab2b84d80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turns: 0
+  turnText: {fileID: 0}
+  currentActiveEnemies: []
+  _attackChooseMenu: {fileID: 0}

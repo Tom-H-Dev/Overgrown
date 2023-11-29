@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a9f7a18c9edbc949b5bf1b79f6ec535, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthPotion: {fileID: 0}
+  potions: {fileID: 0}

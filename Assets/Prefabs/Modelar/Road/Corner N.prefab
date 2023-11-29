@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4202944291971570524}
   m_Layer: 0
-  m_Name: Corner
+  m_Name: Corner N
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -509,7 +509,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 58ffadc42d599af43b531cce8e7f0500, type: 2}
+      objectReference: {fileID: 2100000, guid: 626045247bb415a4e9f353cb4e0fb2a6, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
