@@ -22,18 +22,14 @@ public class Chest : MonoBehaviour
 
                 _player.ChangePlayerExp(10);
 
-                AddInventoryItemManager.instance.potions = PlayerInventory.instance.healthPotion;
-                AddInventoryItemManager.instance.ChangePotionAmount(2);
-                AddInventoryItemManager.instance.potions = PlayerInventory.instance.speedPotion;
-                AddInventoryItemManager.instance.ChangePotionAmount(2);
-                AddInventoryItemManager.instance.potions = PlayerInventory.instance.strengthPotion;
-                AddInventoryItemManager.instance.ChangePotionAmount(2);
-                AddInventoryItemManager.instance.potions = PlayerInventory.instance.defensePotion;
-                AddInventoryItemManager.instance.ChangePotionAmount(2);
+                for (int i = 0; i < PlayerInventory.instance.inventoryPotions.Count; i++)
+                {
+                    Potion l_type = PlayerInventory.instance.inventoryPotions[i].GetComponent<Potion>();
+                    l_type.AddPotionToInv(2, l_type);
+                }
             }
         }
     }
-
 
     private void OnTriggerEnter(Collider other)
     {
