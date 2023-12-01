@@ -13,10 +13,14 @@ public class EnemyBehavior : MonoBehaviour
     [SerializeField] private GameObject _whatEnemyMenu;
 
     [SerializeField] private Image _healthbar;
+    [SerializeField] private GameObject _choiceButton;
+
+    public bool finish = false;
 
     private void OnEnable()
     {
         TurnManager.instance.currentActiveEnemies.Add(gameObject);
+        _choiceButton.SetActive(true);
     }
 
     public void SetEnemyStatsVariable(EnemeyStats l_stats)
@@ -36,9 +40,9 @@ public class EnemyBehavior : MonoBehaviour
             {
                 Debug.Log("You Won combat!");
 
-                GameManager.instance.OnCombatComplete();
+                GameManager.instance.OnCombatComplete(finish);
             }
-
+            _choiceButton.SetActive(false);
             Debug.Log("Enemy died");
         }
         else
