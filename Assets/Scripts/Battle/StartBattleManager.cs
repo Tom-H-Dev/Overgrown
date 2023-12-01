@@ -20,7 +20,6 @@ public class StartBattleManager : MonoBehaviour
     [SerializeField] private EnemeyStats _enemyStats;
     private void OnTriggerEnter(Collider other)
     {
-        print("ello");
         if (!hasEncountered)
         {
             GameManager.instance.canMovePlayer = false;
