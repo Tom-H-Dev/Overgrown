@@ -39,7 +39,7 @@ public abstract class PlayerClass : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.L))
         {
-            ChangePlayerExp(6);
+            ChangePlayerExp(60);
         }
     }
 
