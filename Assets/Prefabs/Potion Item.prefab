@@ -593,6 +593,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d8992b1c1f605a48bd7342d66e85955, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  p_potionName: 
   potionAmount: 2
+  potionStatIncrease: 0
   potionCard: {fileID: 6951207342277213883}
   potionAmountText: {fileID: 3053323082345389918}
+  potionDescription: 

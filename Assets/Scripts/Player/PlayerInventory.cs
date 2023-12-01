@@ -22,19 +22,11 @@ public class PlayerInventory : MonoBehaviour
     public StrengthPotion strengthPotion;
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.B) && !_isMenuActive)
+        if(InputManager.instance.KeyPressed("inventory") && !_isMenuActive)
         {
             _playerInventory.SetActive(true);
             GameManager.instance.ChangePlayerMovePermission(false);
             _isMenuActive = true;
-            OnChangePotionAmount();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            AddInventoryItemManager.instance.potions = speedPotion;
-            AddInventoryItemManager.instance.ChangePotionAmount(2);
-
             OnChangePotionAmount();
         }
     }

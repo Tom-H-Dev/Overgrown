@@ -17,7 +17,12 @@ public class PlayerClassChoice : MonoBehaviour
     public GameObject objectToAddScriptTo;
     [SerializeField] private Image _expProgressBar;
     public Animator animator;
+
+    [Header("Player Stats")]
     public PlayerClassStats playerStats;
+    [SerializeField] private PlayerClassStats _brawlerStats, _gunmanStats, _alchemistStats;
+
+
 
     private void Start()
     {
@@ -33,15 +38,19 @@ public class PlayerClassChoice : MonoBehaviour
         {
             case "BrawlerClass":
                 objectToAddScriptTo.AddComponent<BrawlerClass>();
+                playerStats.CopyFrom(_brawlerStats);
                 break;
             case "AlchemistClass":
                 objectToAddScriptTo.AddComponent<AlchemistClass>();
+                playerStats.CopyFrom(_alchemistStats);
                 break;
             case "GunmanClass":
                 objectToAddScriptTo.AddComponent<GunmanClass>();
+                playerStats.CopyFrom(_gunmanStats);
                 break;
         }
 
+        AttackChoiceSystem.instance._player = objectToAddScriptTo.GetComponent<IPlayerClasses>();
         PlayerClass l_object = objectToAddScriptTo.GetComponent<PlayerClass>();
         l_object.expProgress = _expProgressBar;
         l_object.playerStats = playerStats;
