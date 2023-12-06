@@ -20,10 +20,10 @@ public class BrawlerClass : PlayerClass, IPlayerClasses
     public void Level2Attack()
     {
         Debug.Log("Attack2 Has been used!");
-        foreach (GameObject l_foudObjects in TurnManager.instance.currentActiveEnemies)
+        for (int i = 0; i < TurnManager.instance.currentActiveEnemies.Count; i++)
         {
-            EnemyBehavior enemybehavior = l_foudObjects.GetComponent<EnemyBehavior>();
-            enemybehavior.ChangeHpFromOther(PlayerBattleStats.instance.playerStats.strength);
+            EnemyBehavior enemybehavior = TurnManager.instance.currentActiveEnemies[i].GetComponent<EnemyBehavior>();
+            enemybehavior.ChangeHpFromOther(PlayerBattleStats.instance.playerStats.strength - 2);
         }
         attack2OnCooldown = true;
         turnsLeftToRecharge2 = rechargeTime2 + 1;

@@ -13,30 +13,38 @@ public class StartBattleManager : MonoBehaviour
 
     [SerializeField] private Attack _attackScript;
 
+    public bool hasEncountered = false;
+    public bool finish = false;
+
     [Header("Enemy Type")]
     [SerializeField] private EnemeyStats _enemyStats;
-
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        GameManager.instance.canMovePlayer = false;
-        
-        _enemy1.SetActive(true);
-        _enemy2.SetActive(true);
-        _attackStartButton.interactable = true;
-        
-
-        _turnManager.SetActive(true);
-        _attackScript.AttackButton();
-        _combatMenuStuff.SetActive(true);
-
-        for (int i = 0; i < TurnManager.instance.currentActiveEnemies.Count; i++)
+        if (!hasEncountered)
         {
-            TurnManager.instance.currentActiveEnemies[i].GetComponent<EnemyBehavior>().SetEnemyStatsVariable(_enemyStats);
-            TurnManager.instance.currentActiveEnemies[i].GetComponent<EnemyBehavior>().ChangeHpFromOther(0);
-            PlayerBattleStats.instance.ChangeHpFromOther(0);
+            GameManager.instance.canMovePlayer = false;
+
+            _enemy1.SetActive(true);
+            _enemy2.SetActive(true);
+            _attackStartButton.interactable = true;
+
+
+            _turnManager.SetActive(true);
+            _attackScript.AttackButton();
+            _combatMenuStuff.SetActive(true);
+
+            for (int i = 0; i < TurnManager.instance.currentActiveEnemies.Count; i++)
+            {
+                TurnManager.instance.currentActiveEnemies[i].GetComponent<EnemyBehavior>().SetEnemyStatsVariable(_enemyStats);
+                TurnManager.instance.currentActiveEnemies[i].GetComponent<EnemyBehavior>().ChangeHpFromOther(0);
+                if (finish)
+                {
+                    TurnManager.instance.currentActiveEnemies[i].GetComponent<EnemyBehavior>().finish = finish;
+                }
+                PlayerBattleStats.instance.ChangeHpFromOther(0);
+            }
+            hasEncountered = true;
         }
-
-
 
         //Set All the enemies active that are in the combat by random amount of enemies
         //Reset the enemy stats

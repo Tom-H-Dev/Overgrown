@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -16,7 +17,7 @@ public class GameManager : MonoBehaviour
     #endregion
 
     public bool canMovePlayer = true;
-    public bool hasBeenSelectedEnemy= false;
+    public bool hasBeenSelectedEnemy = false;
     public int selectedEnemy = 0;
     [SerializeField] public GameObject combatCanvas;
 
@@ -40,15 +41,23 @@ public class GameManager : MonoBehaviour
         return null;
     }
 
-    public void OnCombatComplete()
+    public void OnCombatComplete(bool l_inFinish)
     {
-        canMovePlayer = true;
-        combatCanvas.SetActive(false);
-        TurnManager.instance.gameObject.SetActive(false);
+        if (l_inFinish)
+        {
+            Debug.Log("Finish");
+            MainMenu.instance.ToScene("End Screen");
+        }
+        else
+        {
+            canMovePlayer = true;
+            combatCanvas.SetActive(false);
+            TurnManager.instance.gameObject.SetActive(false);
 
-        PlayerClass l_player = FindObjectOfType<PlayerClass>();
-        l_player.ChangePlayerExp(10);
-        AddInventoryItemManager.instance.potions = PlayerInventory.instance.healthPotion;
-        AddInventoryItemManager.instance.ChangePotionAmount(2);
+            PlayerClass l_player = FindObjectOfType<PlayerClass>();
+            l_player.ChangePlayerExp(70);
+            AddInventoryItemManager.instance.potions = PlayerInventory.instance.healthPotion;
+            AddInventoryItemManager.instance.ChangePotionAmount(2);
+        }
     }
 }

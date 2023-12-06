@@ -21,11 +21,11 @@ public abstract class PlayerClass : MonoBehaviour
     public bool attack2OnCooldown = false;
     public bool attack4OnCooldown = false;
     public bool attack6OnCooldown = false;
-
+    [Space]
     public int rechargeTime2 = 2;
     public int rechargeTime4 = 4;
     public int rechargeTime6 = 2;
-
+    [Space]
     public int turnsLeftToRecharge2;
     public int turnsLeftToRecharge4;
     public int turnsLeftToRecharge6;
@@ -39,7 +39,7 @@ public abstract class PlayerClass : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.L))
         {
-            ChangePlayerExp(6);
+            ChangePlayerExp(60);
         }
     }
 
