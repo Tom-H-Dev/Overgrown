@@ -6524,7 +6524,7 @@ PrefabInstance:
     - target: {fileID: 8558783179146421519, guid: 7c47a26eac3a0824487d7e0de1e83ab6,
         type: 3}
       propertyPath: url
-      value: https://u210399.gluwebsite.nl/gameapi.php
+      value: https://u210399.gluwebsite.nl
       objectReference: {fileID: 0}
     - target: {fileID: 8558783179146421519, guid: 7c47a26eac3a0824487d7e0de1e83ab6,
         type: 3}
