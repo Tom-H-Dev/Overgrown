@@ -38,13 +38,19 @@ public class PlayerInventory : MonoBehaviour
 
     public void OnChangePotionAmount()
     {
-        foreach (GameObject l_inventoryPotions in inventoryPotions)
+        for (int i = 0; i < inventoryPotions.Count; i++)
         {
-            if (l_inventoryPotions.GetComponent<Potion>().potionAmount >= 1)
+            if (inventoryPotions[i].GetComponent<Potion>().potionAmount >= 1)
             {
-                Potion l_potion = l_inventoryPotions.GetComponent<Potion>();
+                Potion l_potion = inventoryPotions[i].GetComponent<Potion>();
                 l_potion.potionCard.SetActive(true);
                 l_potion.potionAmountText.text = l_potion.potionAmount + "x";
+            }
+            else if (inventoryPotions[i].GetComponent<Potion>().potionAmount <= 0 && InfoPageItem.instance.potionScript == inventoryPotions[i].GetComponent<Potion>())
+            {
+                Potion l_potion = inventoryPotions[i].GetComponent<Potion>();
+                l_potion.potionCard.SetActive(false);
+                InfoPageItem.instance.gameObject.SetActive(false);
             }
         }
     }

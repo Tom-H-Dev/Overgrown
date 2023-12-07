@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -45,6 +46,7 @@ public class GameManager : MonoBehaviour
         if (l_inFinish)
         {
             Debug.Log("Finish");
+            MainMenu.instance.ToScene("End Screen");
         }
         else
         {

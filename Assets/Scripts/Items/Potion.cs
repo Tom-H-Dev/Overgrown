@@ -35,4 +35,10 @@ public abstract class Potion : MonoBehaviour
         InfoPageItem.instance.potionScript = this;
     }
 
+    public virtual void AddPotionToInv(float l_amount, Potion l_type)
+    {
+        AddInventoryItemManager.instance.potions = l_type;
+        AddInventoryItemManager.instance.ChangePotionAmount(2);
+    }
+
 }

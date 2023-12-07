@@ -33,21 +33,22 @@ public class PlayerBattleStats : MonoBehaviour
 
     public void ChangeHpFromOther(float l_hpDifference)
     {
+        float l_checkIfHealing = curHP - l_hpDifference;
+
         if (l_hpDifference >= curHP) //dead
         {
             Debug.Log("YOU DIED!!! :(:(:(:(:(:(");
             curHP = 0;
         }
-        else if (l_hpDifference == 0)
+        else if (l_hpDifference == 0 || l_checkIfHealing >= playerStats.health)
         {
+            Debug.Log("Max Health");
             curHP = playerStats.health;
             _healthbar.rectTransform.sizeDelta = new Vector2((curHP / playerStats.health) * 300, 50);
         }
         else
         {
             curHP -= l_hpDifference;
-            Debug.Log("Base = " + playerStats.health);
-            Debug.Log("%% " + (curHP / playerStats.health) * 100);
             _healthbar.rectTransform.sizeDelta = new Vector2((curHP / playerStats.health) * 300, 50);
         }
     }
