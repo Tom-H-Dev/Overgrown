@@ -10,16 +10,11 @@ public class KeyBinds : ScriptableObject
 
     public KeyCode CheckKey(string key)
     {
-        switch (key)
+        return key switch
         {
-            case "inventory":
-                return inventory;
-
-            case "sprint":
-                return sprint;
-
-            default:
-                return KeyCode.None;
-        }
+            "inventory" => inventory,
+            "sprint" => sprint,
+            _ => KeyCode.None,
+        };
     }
 }
