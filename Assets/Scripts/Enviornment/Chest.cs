@@ -12,7 +12,7 @@ public class Chest : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.instance.inInteractionArea)
+        if (GameManager.instance.inInteractionArea && !_chestHasOpened)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
