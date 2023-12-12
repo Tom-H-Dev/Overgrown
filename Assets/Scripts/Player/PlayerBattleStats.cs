@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerBattleStats : MonoBehaviour
@@ -24,6 +25,9 @@ public class PlayerBattleStats : MonoBehaviour
 
     public PlayerClassStats playerStats;
 
+    [SerializeField] private GameObject _deathMenu;
+    [SerializeField] private GameObject _combatMenu;
+
     private void Start()
     {
         curHP = playerStats.health;
@@ -34,11 +38,18 @@ public class PlayerBattleStats : MonoBehaviour
     public void ChangeHpFromOther(float l_hpDifference)
     {
         float l_checkIfHealing = curHP - l_hpDifference;
+        float l_defenseRemove = playerStats.defense;
+        for (int i = 0; i < l_defenseRemove; i++)
+        {
+            l_hpDifference *= 0.9f;
+            Debug.Log("Percentage = " + l_hpDifference);
+        }
 
         if (l_hpDifference >= curHP) //dead
         {
             Debug.Log("YOU DIED!!! :(:(:(:(:(:(");
             curHP = 0;
+            StartCoroutine(DeathMessage());
         }
         else if (l_hpDifference == 0 || l_checkIfHealing >= playerStats.health)
         {
@@ -51,5 +62,13 @@ public class PlayerBattleStats : MonoBehaviour
             curHP -= l_hpDifference;
             _healthbar.rectTransform.sizeDelta = new Vector2((curHP / playerStats.health) * 300, 50);
         }
+    }
+
+    private IEnumerator DeathMessage()
+    {
+        _combatMenu.SetActive(false);
+        _deathMenu.SetActive(true);
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene("Main Menu");
     }
 }

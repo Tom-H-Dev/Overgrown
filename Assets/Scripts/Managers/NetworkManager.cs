@@ -21,6 +21,7 @@ public class NetworkManager : MonoBehaviour
     private IEnumerator requestAsync;
 
     public string token;
+    public bool classChosen  = false;
 
     [Header("UI")]
     [SerializeField] private TMP_InputField _loginEmailField;
