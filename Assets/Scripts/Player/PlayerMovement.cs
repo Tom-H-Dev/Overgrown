@@ -17,6 +17,14 @@ public class PlayerMovement : MonoBehaviour
         if (GameManager.instance.canMovePlayer)
         {
             rb.velocity = new Vector3(Input.GetAxis("Horizontal") * _speed , 0 , Input.GetAxis("Vertical") * _speed);
+            if (Input.GetKeyDown(InputManager.instance.keyBinds.CheckKey("sprint")))
+            {
+                _speed = 7;
+            }
+            else if (Input.GetKeyUp(InputManager.instance.keyBinds.CheckKey("sprint")))
+            {
+                _speed = 5;
+            }
         }
     }
 }
