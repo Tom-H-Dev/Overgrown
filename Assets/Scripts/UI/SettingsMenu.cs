@@ -5,17 +5,12 @@ using Unity.Properties;
 
 public class SettingsMenu : MonoBehaviour
 {
-    private KeyBinds _keyBinds;
+    [SerializeField] private KeyBinds _keyBinds;
 
     [SerializeField] private Button inventoryButton, sprintButton;
     [SerializeField] private TextMeshProUGUI inventoryText, sprintText;
 
     private string selectedAction;
-
-    private void Start()
-    {
-        _keyBinds = FindObjectOfType<KeyBinds>();
-    }
 
     private void OnEnable()
     {
