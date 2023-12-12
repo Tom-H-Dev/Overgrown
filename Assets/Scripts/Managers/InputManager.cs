@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class InputManager : MonoBehaviour
@@ -20,15 +18,21 @@ public class InputManager : MonoBehaviour
             Destroy(this);
         }
     }
-#endregion
+    #endregion
 
-    public bool KeyPressed(string key)
+    public bool KeyPressed(string _key)
     {
-        if (Input.GetKey(keyBinds.CheckKey(key)))
+        if (Input.GetKey(keyBinds.CheckKey(_key)))
         {
             return true;
         }
         else { return false; }
     }
 
+    public void ChangeKeyBinding(string _key, KeyCode _newKeyCode)
+    {
+        keyBinds.ChangeKey(_key, _newKeyCode);
+       
+        //Playerprefs
+    }
 }
