@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Keybinds", menuName = "Keybinds")]
 public class KeyBinds : ScriptableObject
 {
-    public KeyCode inventory, sprint;
+    public KeyCode inventory, sprint, interact;
 
     public KeyCode CheckKey(string _key)
     {
@@ -13,8 +13,9 @@ public class KeyBinds : ScriptableObject
         {
             "inventory" => inventory,
             "sprint" => sprint,
+            "interact" => interact,
             _ => KeyCode.None,
-        };
+        }; ;
     }
 
     public void ChangeKey(string _key, KeyCode _newKeyCode)
@@ -26,6 +27,9 @@ public class KeyBinds : ScriptableObject
                 break;
             case "sprint":
                 sprint = _newKeyCode;
+                break;
+            case "interact":
+                interact = _newKeyCode;
                 break;
             default:
                 break;

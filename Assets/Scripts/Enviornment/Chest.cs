@@ -14,7 +14,7 @@ public class Chest : MonoBehaviour
     {
         if (GameManager.instance.inInteractionArea && !_chestHasOpened)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (InputManager.instance.KeyPressed("interact"))
             {
                 Debug.Log("Opened Chest");
                 _chestHasOpened = true;
