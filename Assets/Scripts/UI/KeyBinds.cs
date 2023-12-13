@@ -7,19 +7,28 @@ public class KeyBinds : ScriptableObject
 {
     public KeyCode inventory, sprint;
 
-
-    public KeyCode CheckKey(string key)
+    public KeyCode CheckKey(string _key)
     {
-        switch (key)
+        return _key switch
+        {
+            "inventory" => inventory,
+            "sprint" => sprint,
+            _ => KeyCode.None,
+        };
+    }
+
+    public void ChangeKey(string _key, KeyCode _newKeyCode)
+    {
+        switch (_key)
         {
             case "inventory":
-                return inventory;
-
+                inventory = _newKeyCode;
+                break;
             case "sprint":
-                return sprint;
-
+                sprint = _newKeyCode;
+                break;
             default:
-                return KeyCode.None;
+                break;
         }
     }
 }

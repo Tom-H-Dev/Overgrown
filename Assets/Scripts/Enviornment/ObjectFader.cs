@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ObjectFader : MonoBehaviour
 {
+    string t = "https://u210399.gluwebsite.nl/api.php";
 
     public float fadeSpeed = 7.5f;
     public float fadeValue = 0.5f;
