@@ -29,9 +29,16 @@ public class EnemyBehavior : MonoBehaviour
         SetBattleStats();
     }
 
-    public void ChangeHpFromOther(float hpDifference)
+    public void ChangeHpFromOther(float l_hpDifference)
     {
-        if (hpDifference >= _curHP)
+        float l_defenseRemove = stats.baseDEF;
+        for (int i = 0; i < l_defenseRemove; i++)
+        {
+            l_hpDifference *= 0.9f;
+            Debug.Log("Percentage = " + l_hpDifference);
+        }
+
+        if (l_hpDifference >= _curHP)
         { // dead
             TurnManager.instance.currentActiveEnemies.Remove(gameObject);
             gameObject.SetActive(false);
@@ -47,7 +54,7 @@ public class EnemyBehavior : MonoBehaviour
         }
         else
         {
-            _curHP -= hpDifference;
+            _curHP -= l_hpDifference;
             _healthbar.rectTransform.sizeDelta = new Vector2((_curHP / stats.baseHP) * 200, 50);
         }
     }

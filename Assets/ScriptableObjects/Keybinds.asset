@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Keybinds
   m_EditorClassIdentifier: 
   inventory: 98
-  sprint: 0
+  sprint: 304
+  interact: 101
