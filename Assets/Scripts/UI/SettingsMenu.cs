@@ -7,8 +7,8 @@ public class SettingsMenu : MonoBehaviour
 {
     [SerializeField] private KeyBinds _keyBinds;
 
-    [SerializeField] private Button inventoryButton, sprintButton;
-    [SerializeField] private TextMeshProUGUI inventoryText, sprintText;
+    [SerializeField] private Button inventoryButton, sprintButton, interactButton;
+    [SerializeField] private TextMeshProUGUI inventoryText, sprintText, interactText;
 
     private string selectedAction;
 
@@ -16,9 +16,11 @@ public class SettingsMenu : MonoBehaviour
     {
         inventoryText.text = _keyBinds.inventory.ToString(); 
         sprintText.text = _keyBinds.sprint.ToString();
+        interactText.text = _keyBinds.interact.ToString();
 
         AddButtonListener(inventoryButton, "inventory");
         AddButtonListener(sprintButton, "sprint");
+        AddButtonListener(interactButton, "interact");
     }
 
     private void AddButtonListener(Button _button, string _action)
@@ -67,5 +69,10 @@ public class SettingsMenu : MonoBehaviour
         {
             sprintText.text = _keyCode.ToString();
         }
+        else if (_action == "interact")
+        {
+            interactText.text = _keyCode.ToString();
+        }
+
     }
 }
