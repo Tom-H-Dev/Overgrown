@@ -9565,6 +9565,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4399960396759956713}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1234464395 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2544501366253042070, guid: facc1931bba533b4a93c97994a970a01,
+    type: 3}
+  m_PrefabInstance: {fileID: 4399960396759956713}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234464392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1237405323 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4202944291971570524, guid: 0df2c9a38ea7a734691f717cfd6550a9,
@@ -9657,6 +9669,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4399960396759956713}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1267172756 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2678675834934831813, guid: facc1931bba533b4a93c97994a970a01,
+    type: 3}
+  m_PrefabInstance: {fileID: 4399960396759956713}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267172753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1267708171
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18053,9 +18077,19 @@ PrefabInstance:
       objectReference: {fileID: 664347464}
     - target: {fileID: 5153183562410753282, guid: facc1931bba533b4a93c97994a970a01,
         type: 3}
+      propertyPath: _enemySprite
+      value: 
+      objectReference: {fileID: 1234464395}
+    - target: {fileID: 5153183562410753282, guid: facc1931bba533b4a93c97994a970a01,
+        type: 3}
       propertyPath: _turnManager
       value: 
       objectReference: {fileID: 695440816}
+    - target: {fileID: 5282466066090506889, guid: facc1931bba533b4a93c97994a970a01,
+        type: 3}
+      propertyPath: _enemySprite
+      value: 
+      objectReference: {fileID: 1267172756}
     - target: {fileID: 5282466066090506889, guid: facc1931bba533b4a93c97994a970a01,
         type: 3}
       propertyPath: _turnManager
