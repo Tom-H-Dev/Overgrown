@@ -7,7 +7,6 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody rb;
     private float _speed = 5;
-    public bool grounded = false;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -17,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (GameManager.instance.canMovePlayer)
         {
-            rb.velocity = new Vector3(Input.GetAxis("Horizontal") * _speed , 0 , Input.GetAxis("Vertical") * _speed);
+            rb.velocity = new Vector3(Input.GetAxis("Horizontal") * _speed , rb.velocity.y , Input.GetAxis("Vertical") * _speed);
 
 
             if (Input.GetKeyDown(InputManager.instance.keyBinds.CheckKey("sprint")))
