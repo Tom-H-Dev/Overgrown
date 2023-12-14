@@ -125,4 +125,24 @@ MonoBehaviour:
   _attackStartButton: {fileID: 0}
   _attackScript: {fileID: 0}
   hasEncountered: 0
-  _enemyStats: {fileID: 11400000, guid: bbab40d9dfb614d4cb7aa356a11a286a, type: 2}
+  finish: 1
+  _enemyNames:
+  - Billy
+  - Henk
+  - Koen
+  - 2
+  - 22
+  - 222
+  _enemyStats:
+  - {fileID: 11400000, guid: 1178f16c78822f140a475fa24715f790, type: 2}
+  - {fileID: 11400000, guid: b57c133d47bb91040b9512c2a0fc0570, type: 2}
+  - {fileID: 11400000, guid: f23e13bc4fdf80e44b00727dd9e1d7c4, type: 2}
+  - {fileID: 11400000, guid: e5f78940f8a2dd348a63f5eeadea3108, type: 2}
+  - {fileID: 11400000, guid: 0aa1edb9fc17fc74787eaba998480724, type: 2}
+  - {fileID: 11400000, guid: 4c41c62b450cd1e48960a92e3f0fd7b9, type: 2}
+  _enemyVisuals:
+  - {fileID: 21300000, guid: e4cff99d22890a344aa10a384b88e0ab, type: 3}
+  - {fileID: 21300000, guid: 17becf3b0cc450b4698f9101bf0f3547, type: 3}
+  - {fileID: 21300000, guid: c70d04bb39465bc43badb56c264eeccb, type: 3}
+  - {fileID: 21300000, guid: 8b3c8dda3456a8a49a1638362fa5b804, type: 3}
+  _enemyStat: {fileID: 0}

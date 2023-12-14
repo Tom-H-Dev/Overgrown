@@ -17,9 +17,16 @@ public class StartBattleManager : MonoBehaviour
     public bool finish = false;
 
     [Header("Enemy Type")]
-    [SerializeField] private EnemeyStats _enemyStats;
+    [SerializeField] private List<string> _enemyNames = new List<string>();
+    [SerializeField] private List<EnemeyStats> _enemyStats = new List<EnemeyStats>();
+    [SerializeField] private List<Sprite> _enemyVisuals = new List<Sprite>();
+
+
+    [SerializeField] private EnemeyStats _enemyStat;
     private void OnTriggerEnter(Collider other)
     {
+        int l_randomIndex = Random.Range(0, _enemyNames.Count);
+
         if (!hasEncountered)
         {
             GameManager.instance.canMovePlayer = false;
@@ -35,8 +42,12 @@ public class StartBattleManager : MonoBehaviour
 
             for (int i = 0; i < TurnManager.instance.currentActiveEnemies.Count; i++)
             {
-                TurnManager.instance.currentActiveEnemies[i].GetComponent<EnemyBehavior>().SetEnemyStatsVariable(_enemyStats);
+                TurnManager.instance.currentActiveEnemies[i].GetComponent<EnemyBehavior>().SetEnemyStatsVariable(_enemyStats[l_randomIndex]);
+                TurnManager.instance.currentActiveEnemies[i].GetComponent<EnemyBehavior>()._enemySprite.sprite = _enemyVisuals[l_randomIndex];
                 TurnManager.instance.currentActiveEnemies[i].GetComponent<EnemyBehavior>().ChangeHpFromOther(0);
+
+
+
                 if (finish)
                 {
                     TurnManager.instance.currentActiveEnemies[i].GetComponent<EnemyBehavior>().finish = finish;
