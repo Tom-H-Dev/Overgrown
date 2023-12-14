@@ -13,6 +13,7 @@ public class EnemyBehavior : MonoBehaviour
     [SerializeField] private GameObject _whatEnemyMenu;
 
     [SerializeField] private Image _healthbar;
+    public Image _enemySprite;
     [SerializeField] private GameObject _choiceButton;
 
     public bool finish = false;
