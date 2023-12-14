@@ -1306,8 +1306,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 131140563}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.18528499, y: 4.7644113e-15, z: -1.6807419e-15, w: 0.98268485}
-  m_LocalPosition: {x: 0, y: 4.91, z: -10}
+  m_LocalRotation: {x: 0.18528502, y: 0.0000000121307835, z: -0.0000000022872562,
+    w: 0.98268485}
+  m_LocalPosition: {x: 0, y: 4.91, z: -24.029999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1581,8 +1582,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: CHOOSE YOUR CLASS
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
-  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2236,7 +2237,13 @@ MonoBehaviour:
   _enemy2: {fileID: 0}
   _attackStartButton: {fileID: 0}
   _attackScript: {fileID: 0}
-  _enemyStats: {fileID: 0}
+  hasEncountered: 0
+  finish: 0
+  _enemyNames: []
+  _enemyStats:
+  - {fileID: 0}
+  _enemyVisuals: []
+  _enemyStat: {fileID: 0}
 --- !u!65 &423233316
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3959,8 +3966,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 879971864}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.18528499, y: 4.7644113e-15, z: -1.6807419e-15, w: 0.98268485}
-  m_LocalPosition: {x: 0, y: 4.91, z: -10}
+  m_LocalRotation: {x: 0.18528502, y: 0.0000000121307835, z: -0.0000000022872562,
+    w: 0.98268485}
+  m_LocalPosition: {x: 0, y: 4.91, z: -24.029999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4675,8 +4683,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Alchemist
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
-  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5585,8 +5593,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
-  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7668,6 +7676,8 @@ MonoBehaviour:
   curSPD: 0
   _healthbar: {fileID: 501692160}
   playerStats: {fileID: 11400000, guid: f17fa4ba33624d54d8a69dbbc1d771af, type: 2}
+  _deathMenu: {fileID: 0}
+  _combatMenu: {fileID: 0}
 --- !u!114 &1530970837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8277,6 +8287,9 @@ MonoBehaviour:
   _curSPD: 0
   _whatEnemyMenu: {fileID: 363756735}
   _healthbar: {fileID: 1144400384}
+  _enemySprite: {fileID: 0}
+  _choiceButton: {fileID: 0}
+  finish: 0
 --- !u!114 &1614980931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10382,7 +10395,7 @@ PrefabInstance:
     - target: {fileID: 6573374230016589501, guid: d906e136a0162404e970703fae6d1e67,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -14.03
       objectReference: {fileID: 0}
     - target: {fileID: 6573374230016589501, guid: d906e136a0162404e970703fae6d1e67,
         type: 3}
@@ -10427,11 +10440,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8808457582429694464, guid: d906e136a0162404e970703fae6d1e67,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1866087580}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d906e136a0162404e970703fae6d1e67, type: 3}
 --- !u!114 &1866087577 stripped
 MonoBehaviour:
@@ -10457,11 +10466,11 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1866087576}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1866087580
+--- !u!114 &1866087580 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 8894472930938959772, guid: d906e136a0162404e970703fae6d1e67,
+    type: 3}
+  m_PrefabInstance: {fileID: 1866087576}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1866087579}
   m_Enabled: 1
@@ -10944,6 +10953,9 @@ MonoBehaviour:
   _curSPD: 0
   _whatEnemyMenu: {fileID: 363756735}
   _healthbar: {fileID: 2554385}
+  _enemySprite: {fileID: 0}
+  _choiceButton: {fileID: 0}
+  finish: 0
 --- !u!114 &1965705775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11578,8 +11590,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Gunman
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
-  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

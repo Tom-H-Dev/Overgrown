@@ -7,17 +7,23 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody rb;
     private float _speed = 5;
+
+    private Animator _animator;
+    private GameObject _playerSprite;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        _animator = GetComponent<Animator>();
+
+        _playerSprite = GameObject.Find("Herman");
     }
 
     private void FixedUpdate()
     {
         if (GameManager.instance.canMovePlayer)
         {
-            rb.velocity = new Vector3(Input.GetAxis("Horizontal") * _speed , rb.velocity.y , Input.GetAxis("Vertical") * _speed);
-
+            rb.velocity = new Vector3(Input.GetAxis("Horizontal") * _speed, rb.velocity.y, Input.GetAxis("Vertical") * _speed);
 
             if (Input.GetKeyDown(InputManager.instance.keyBinds.CheckKey("sprint")))
             {
@@ -26,6 +32,34 @@ public class PlayerMovement : MonoBehaviour
             else if (Input.GetKeyUp(InputManager.instance.keyBinds.CheckKey("sprint")))
             {
                 _speed = 5;
+            }
+
+
+            bool l_move = false;
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+            {
+                l_move = true;
+            }
+            else
+            {
+                l_move = false;
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                _playerSprite.transform.rotation = new Quaternion(transform.rotation.x, (transform.rotation.y + 180), transform.rotation.z, 0);
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                _playerSprite.transform.rotation = new Quaternion(transform.rotation.x, (transform.rotation.y), transform.rotation.z, 0);
+            }
+
+            if (l_move)
+            {
+                _animator.SetBool("isMoving", true);
+            }
+            else if (!l_move)
+            {
+                _animator.SetBool("isMoving", false);
             }
         }
     }
