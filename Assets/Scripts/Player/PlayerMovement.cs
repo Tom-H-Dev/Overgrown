@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody rb;
     private float _speed = 5;
-    bool grounded = false;
+    public bool grounded = false;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -28,25 +28,6 @@ public class PlayerMovement : MonoBehaviour
             {
                 _speed = 5;
             }
-
-            if (!grounded)
-            {
-                rb.velocity = new Vector3(Input.GetAxis("Horizontal") * _speed, -2, Input.GetAxis("Vertical") * _speed);
-            }
-        }
-    }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.layer == 3)
-        {
-            grounded = true;
-        }
-    }
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.layer == 3)
-        {
-            grounded = false;
         }
     }
 }
