@@ -28,4 +28,13 @@ public class MainMenu : MonoBehaviour
     }
 
     public void ToScene(string SceneName) => SceneManager.LoadScene(SceneName);
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name == "Player")
+        {
+            ToScene("Alpha");
+        }
+    }
+
 }
