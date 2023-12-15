@@ -6988,11 +6988,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2719412972455993457, guid: c5020b6571395e34183f4fdc824af630,
         type: 3}
-      propertyPath: finish
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2719412972455993457, guid: c5020b6571395e34183f4fdc824af630,
-        type: 3}
       propertyPath: _enemy1
       value: 
       objectReference: {fileID: 1658428071}
@@ -14579,7 +14574,11 @@ PrefabInstance:
     - target: {fileID: 2719412972455993457, guid: c5020b6571395e34183f4fdc824af630,
         type: 3}
       propertyPath: finish
+<<<<<<< HEAD
       value: 0
+=======
+      value: 1
+>>>>>>> parent of 1f14dae (attack start system)
       objectReference: {fileID: 0}
     - target: {fileID: 2719412972455993457, guid: c5020b6571395e34183f4fdc824af630,
         type: 3}
@@ -20681,9 +20680,12 @@ Transform:
   m_GameObject: {fileID: 1251380294}
   serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalRotation: {x: 0.18528502, y: 0.00000003274307, z: -0.000000006173699, w: 0.98268485}
   m_LocalPosition: {x: 53.1, y: 15.099999, z: 394.4}
 =======
+=======
+>>>>>>> parent of 1f14dae (attack start system)
   m_LocalRotation: {x: 0.185285, y: 0.000000008454226, z: -0.0000000015940427, w: 0.98268485}
   m_LocalPosition: {x: 68.69, y: 8.06, z: 2.0200005}
 >>>>>>> parent of cf6f13c (MAX)
@@ -23259,9 +23261,12 @@ Transform:
   m_GameObject: {fileID: 1387937609}
   serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalRotation: {x: 0.18528502, y: 0.00000003274307, z: -0.000000006173699, w: 0.98268485}
   m_LocalPosition: {x: 53.1, y: 15.099999, z: 394.4}
 =======
+=======
+>>>>>>> parent of 1f14dae (attack start system)
   m_LocalRotation: {x: 0.185285, y: 0.000000008454226, z: -0.0000000015940427, w: 0.98268485}
   m_LocalPosition: {x: 68.69, y: 8.06, z: 2.0200005}
 >>>>>>> parent of cf6f13c (MAX)
@@ -34789,11 +34794,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2719412972455993457, guid: c5020b6571395e34183f4fdc824af630,
-        type: 3}
-      propertyPath: finish
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2719412972455993457, guid: c5020b6571395e34183f4fdc824af630,
         type: 3}
       propertyPath: _enemy1
