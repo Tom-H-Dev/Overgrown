@@ -8,16 +8,10 @@ public class Attack : MonoBehaviour
 {
     public Button attackButton;
     public TextMeshProUGUI turnText;
-    
-
-    
 
     [Header("UI elements attack order")]
     [SerializeField] private GameObject _whatEnemy;
-    public void AttackButton()
-    {
-        StartCoroutine(AttackFunctionality());
-    }
+    public void AttackButton() => StartCoroutine(AttackFunctionality());
 
     public IEnumerator AttackFunctionality()
     {

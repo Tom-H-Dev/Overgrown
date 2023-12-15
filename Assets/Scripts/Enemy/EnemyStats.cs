@@ -4,7 +4,6 @@ using UnityEngine;
 
 [CreateAssetMenu]
 
-
 public class EnemeyStats : ScriptableObject
 {
     public float baseHP;
