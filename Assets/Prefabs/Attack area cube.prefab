@@ -145,4 +145,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 17becf3b0cc450b4698f9101bf0f3547, type: 3}
   - {fileID: 21300000, guid: c70d04bb39465bc43badb56c264eeccb, type: 3}
   - {fileID: 21300000, guid: 8b3c8dda3456a8a49a1638362fa5b804, type: 3}
+  - {fileID: 21300000, guid: 055760870c0add24fa4cabf295e1cd0d, type: 3}
+  - {fileID: 21300000, guid: 6c32d9589ecd8214080f7251ce8c3122, type: 3}
   _enemyStat: {fileID: 0}
