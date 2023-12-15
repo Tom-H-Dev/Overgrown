@@ -9,7 +9,7 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if (FindAnyObjectByType<StartBattleManager>().finish)
+        if (Input.GetKey(InputManager.instance.keyBinds.CheckKey("pause")))
         {
             GameManager.instance.canMovePlayer = false;
             _pausedCanvas.SetActive(true);
