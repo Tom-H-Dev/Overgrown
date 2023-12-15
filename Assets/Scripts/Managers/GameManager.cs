@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     public bool canMovePlayer = true;
     public bool hasBeenSelectedEnemy = false;
     public int selectedEnemy = 0;
-    [SerializeField] public GameObject combatCanvas;
+     public GameObject combatCanvas;
 
     public bool inInteractionArea = false;
 
@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
         if (l_inFinish)
         {
             Debug.Log("Finish");
-            MainMenu.instance.ToScene("End Screen");
+            MainMenu.instance.ToScene("Credits");
         }
         else
         {

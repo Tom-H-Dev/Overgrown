@@ -8,11 +8,12 @@ public class Chest : MonoBehaviour
     [Header("UI Stuff")]
     [SerializeField] private Animator _animator;
     [SerializeField] private bool _chestHasOpened = false;
-    private PlayerClass _player; 
+    [SerializeField] private PlayerClass _player;
+    [SerializeField] private bool _inInteractionArea = false;
 
     private void Update()
     {
-        if (GameManager.instance.inInteractionArea && !_chestHasOpened)
+        if (_inInteractionArea && !_chestHasOpened)
         {
             if (InputManager.instance.KeyPressed("interact"))
             {
@@ -37,7 +38,7 @@ public class Chest : MonoBehaviour
         {
             _player = l_player;
             _animator.SetTrigger("InteractUp");
-            GameManager.instance.inInteractionArea = true;
+            _inInteractionArea = true;
         }
     }
     private void OnTriggerExit(Collider other)
@@ -45,13 +46,13 @@ public class Chest : MonoBehaviour
         if (!_chestHasOpened && other.TryGetComponent(out PlayerClass l_player))
         {
             _animator.SetTrigger("InteractDown");
-            GameManager.instance.inInteractionArea = false;
+            _inInteractionArea = false;
         }
     }
 
     private void DropInteractText()
     {
         _animator.SetTrigger("InteractDown");
-        GameManager.instance.inInteractionArea = false;
+        _inInteractionArea = false;
     }
 }
