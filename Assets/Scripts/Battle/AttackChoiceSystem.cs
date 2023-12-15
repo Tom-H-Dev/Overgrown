@@ -16,24 +16,13 @@ public class AttackChoiceSystem : MonoBehaviour
     #endregion
     public IPlayerClasses _player;
 
-    public void BaseAttackChoice()
-    {
-        _player.BaseAttack();
-    }
-    public void DefenseChoice()
-    {
-        _player.Defense();
-    }
-    public void Level2AttackChoice()
-    {
-        _player.Level2Attack();
-    }
-    public void Level4AttackChoice()
-    {
-        _player.Level4Attack();
-    }
-    public void Level6AttackChoice()
-    {
-        _player.Level6Attack();
-    }
+    public void BaseAttackChoice() => _player.BaseAttack();
+
+    public void DefenseChoice() => _player.Defense();
+
+    public void Level2AttackChoice() => _player.Level2Attack();
+
+    public void Level4AttackChoice() => _player.Level4Attack();
+
+    public void Level6AttackChoice() => _player.Level6Attack();
 }

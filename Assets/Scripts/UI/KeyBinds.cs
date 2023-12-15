@@ -15,7 +15,7 @@ public class KeyBinds : ScriptableObject
             "sprint" => sprint,
             "interact" => interact,
             _ => KeyCode.None,
-        }; ;
+        };
     }
 
     public void ChangeKey(string _key, KeyCode _newKeyCode)

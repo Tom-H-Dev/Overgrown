@@ -27,8 +27,14 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
-    public void ToScene(string SceneName)
+    public void ToScene(string SceneName) => SceneManager.LoadScene(SceneName);
+
+    private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene(SceneName);
+        if (other.gameObject.name == "Player")
+        {
+            ToScene("Alpha");
+        }
     }
+
 }
