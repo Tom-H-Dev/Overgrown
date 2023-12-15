@@ -30,14 +30,14 @@ public class StartBattleManager : MonoBehaviour
         if (!hasEncountered)
         {
             GameManager.instance.canMovePlayer = false;
-            _turnManager.SetActive(true);
-            _attackScript.AttackButton();
-            _combatMenuStuff.SetActive(true);
 
             _enemy1.SetActive(true);
             _enemy2.SetActive(true);
             _attackStartButton.interactable = true;
 
+            _turnManager.SetActive(true);
+            _attackScript.AttackButton();
+            _combatMenuStuff.SetActive(true);
 
 
             for (int i = 0; i < TurnManager.instance.currentActiveEnemies.Count; i++)
