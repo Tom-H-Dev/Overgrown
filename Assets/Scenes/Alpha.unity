@@ -5535,6 +5535,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 278887196}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &283868066 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3542077558657408844, guid: facc1931bba533b4a93c97994a970a01,
+    type: 3}
+  m_PrefabInstance: {fileID: 1658428062}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &296291051
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6840,7 +6852,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _attackStartButton
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 283868066}
     - target: {fileID: 2719412972455993457, guid: c5020b6571395e34183f4fdc824af630,
         type: 3}
       propertyPath: _enemyNames.Array.size
@@ -8325,7 +8337,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _attackStartButton
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 283868066}
     - target: {fileID: 2719412972455993457, guid: c5020b6571395e34183f4fdc824af630,
         type: 3}
       propertyPath: _enemyNames.Array.size
@@ -14430,7 +14442,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _attackStartButton
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 283868066}
     - target: {fileID: 2719412972455993457, guid: c5020b6571395e34183f4fdc824af630,
         type: 3}
       propertyPath: _enemyNames.Array.size
@@ -14583,7 +14595,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _attackStartButton
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 283868066}
     - target: {fileID: 2719412972455993457, guid: c5020b6571395e34183f4fdc824af630,
         type: 3}
       propertyPath: _enemyNames.Array.size
@@ -27088,6 +27100,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Combat Canvas (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 126834990191466595, guid: facc1931bba533b4a93c97994a970a01,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2655481877802108020, guid: facc1931bba533b4a93c97994a970a01,
         type: 3}
       propertyPath: m_Pivot.x
@@ -30258,7 +30275,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _attackStartButton
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 283868066}
     - target: {fileID: 2719412972455993457, guid: c5020b6571395e34183f4fdc824af630,
         type: 3}
       propertyPath: _enemyNames.Array.size
@@ -33509,7 +33526,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _attackStartButton
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 283868066}
     - target: {fileID: 2719412972455993457, guid: c5020b6571395e34183f4fdc824af630,
         type: 3}
       propertyPath: _enemyNames.Array.size
