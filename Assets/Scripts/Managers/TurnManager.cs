@@ -61,6 +61,14 @@ public class TurnManager : MonoBehaviour
     private void Update()
     {
         turnText.text = turns.ToString();
+        if (turns == PlayerTurns.myturn)
+        {
+            turnText.text = "Player's turn";
+        }
+        else if (turns == PlayerTurns.enemyturn)
+        {
+            turnText.text = "Enemy's turn";
+        }
     }
 
     public IEnumerator NextTurn()
@@ -101,9 +109,6 @@ public class TurnManager : MonoBehaviour
                 battackLevel6.interactable = true;
             }
         }
-
-
-
     }
 
     public void ChangeAttackListFromLevelUp()

@@ -42,18 +42,15 @@ public class PlayerBattleStats : MonoBehaviour
         for (int i = 0; i < l_defenseRemove; i++)
         {
             l_hpDifference *= 0.9f;
-            Debug.Log("Percentage = " + l_hpDifference);
         }
 
         if (l_hpDifference >= curHP) //dead
         {
-            Debug.Log("YOU DIED!!! :(:(:(:(:(:(");
             curHP = 0;
             StartCoroutine(DeathMessage());
         }
         else if (l_hpDifference == 0 || l_checkIfHealing >= playerStats.health)
         {
-            Debug.Log("Max Health");
             curHP = playerStats.health;
             _healthbar.rectTransform.sizeDelta = new Vector2((curHP / playerStats.health) * 300, 50);
         }
