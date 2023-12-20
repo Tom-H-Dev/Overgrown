@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Roaming : MonoBehaviour
 {
-    [SerializeField] public Collider _moveArea;
+    public Collider _moveArea;
     private float _moveSpeed = 0.5f;
     private Vector3 _targetPos;
 

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 976373713662903800}
   - component: {fileID: 8237501020552556500}
-  - component: {fileID: 6710722661612543789}
   - component: {fileID: 6224252230103737403}
   m_Layer: 0
   m_Name: Enemy04
@@ -28,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 4859490841301204090}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -56.4, y: -13.438345, z: 30.1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -86,27 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!65 &6710722661612543789
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4859490841301204090}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 20, y: 5, z: 20}
-  m_Center: {x: 0, y: -3, z: 0}
 --- !u!114 &6224252230103737403
 MonoBehaviour:
   m_ObjectHideFlags: 0
