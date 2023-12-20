@@ -16,6 +16,8 @@ public class EnemyBehavior : MonoBehaviour
     public Image _enemySprite;
     [SerializeField] private GameObject _choiceButton;
 
+    private List<GameObject> _visualEnemies;
+
     public bool finish = false;
 
     private void OnEnable()
@@ -24,9 +26,10 @@ public class EnemyBehavior : MonoBehaviour
         _choiceButton.SetActive(true);
     }
 
-    public void SetEnemyStatsVariable(EnemeyStats l_stats)
+    public void SetEnemyStatsVariable(EnemeyStats l_stats, List<GameObject> l_enemies)
     {
         stats = l_stats;
+        _visualEnemies = l_enemies;
         SetBattleStats();
     }
 
@@ -48,7 +51,7 @@ public class EnemyBehavior : MonoBehaviour
             {
                 Debug.Log("You Won combat!");
 
-                GameManager.instance.OnCombatComplete(finish);
+                GameManager.instance.OnCombatComplete(finish, _visualEnemies);
             }
             _choiceButton.SetActive(false);
             Debug.Log("Enemy died");
