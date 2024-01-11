@@ -2,13 +2,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Unity.Properties;
+using Unity.VisualScripting;
 
 public class SettingsMenu : MonoBehaviour
 {
     [SerializeField] private KeyBinds _keyBinds;
 
-    [SerializeField] private Button inventoryButton, sprintButton, interactButton;
-    [SerializeField] private TextMeshProUGUI inventoryText, sprintText, interactText;
+    [SerializeField] private Button inventoryButton, sprintButton, interactButton, pauseButton;
+    [SerializeField] private TextMeshProUGUI inventoryText, sprintText, interactText, pauseText;
 
     private string selectedAction;
 
@@ -17,10 +18,12 @@ public class SettingsMenu : MonoBehaviour
         inventoryText.text = _keyBinds.inventory.ToString(); 
         sprintText.text = _keyBinds.sprint.ToString();
         interactText.text = _keyBinds.interact.ToString();
+        pauseText.text = _keyBinds.pause.ToString();
 
         AddButtonListener(inventoryButton, "inventory");
         AddButtonListener(sprintButton, "sprint");
         AddButtonListener(interactButton, "interact");
+        AddButtonListener(pauseButton, "button");
     }
 
     private void AddButtonListener(Button _button, string _action)
@@ -61,17 +64,22 @@ public class SettingsMenu : MonoBehaviour
 
     private void UpdateKeyText(string _action, KeyCode _keyCode)
     {
-        if (_action == "inventory")
+        switch (_action)
         {
-            inventoryText.text = _keyCode.ToString();
-        }
-        else if (_action == "sprint")
-        {
-            sprintText.text = _keyCode.ToString();
-        }
-        else if (_action == "interact")
-        {
-            interactText.text = _keyCode.ToString();
+            case "inventory":
+                inventoryText.text = _keyCode.ToString();
+                break;
+            case "sprint":
+                sprintText.text = _keyCode.ToString();
+                break;
+            case "interact":
+                interactText.text = _keyCode.ToString();
+                break;
+            case "pause":
+                pauseText.text = _keyCode.ToString();
+                break;
+            default:
+                break;
         }
 
     }
