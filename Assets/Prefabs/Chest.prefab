@@ -68,7 +68,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 0}
-  _chestHasOpened: 0
 --- !u!1 &7818136681638565259
 GameObject:
   m_ObjectHideFlags: 0
