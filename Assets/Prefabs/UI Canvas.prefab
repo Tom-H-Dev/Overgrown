@@ -9361,6 +9361,7 @@ MonoBehaviour:
   potionCard: {fileID: 7863697213991862820}
   potionAmountText: {fileID: 2812856300474557377}
   potionDescription: 
+  img: {fileID: 21300000, guid: 16df1904eee28ce408190c0c320b55a6, type: 3}
 --- !u!224 &8148540888869813864 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8954209458048156407, guid: 43af464cc55f70c43a0178b265de62f9,
@@ -9859,6 +9860,7 @@ MonoBehaviour:
   potionCard: {fileID: 5572471298912070398}
   potionAmountText: {fileID: 539682132973390619}
   potionDescription: 
+  img: {fileID: 21300000, guid: 4e3d33e93456f5b47be34815353ddaaa, type: 3}
 --- !u!224 &5864105832497862322 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8954209458048156407, guid: 43af464cc55f70c43a0178b265de62f9,
@@ -10410,6 +10412,7 @@ MonoBehaviour:
   potionCard: {fileID: 3996321772781899870}
   potionAmountText: {fileID: 9033651785409278395}
   potionDescription: 
+  img: {fileID: 21300000, guid: 0c9b4af7453851843a18dad9948333d6, type: 3}
 --- !u!114 &9033651785409278395 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3053323082345389918, guid: 43af464cc55f70c43a0178b265de62f9,
@@ -10688,6 +10691,12 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -62.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8141411005692659480, guid: 43af464cc55f70c43a0178b265de62f9,
+        type: 3}
+      propertyPath: img
+      value: 
+      objectReference: {fileID: 21300000, guid: 30eca3ba67fbf63498e7f4b12eec94a3,
+        type: 3}
     - target: {fileID: 8954209458048156407, guid: 43af464cc55f70c43a0178b265de62f9,
         type: 3}
       propertyPath: m_Pivot.x
