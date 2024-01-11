@@ -1,8 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using Unity.Properties;
-using Unity.VisualScripting;
 
 public class SettingsMenu : MonoBehaviour
 {
@@ -26,6 +24,11 @@ public class SettingsMenu : MonoBehaviour
         AddButtonListener(pauseButton, "button");
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="_button"></param>
+    /// <param name="_action"></param>
     private void AddButtonListener(Button _button, string _action)
     {
         if (_button != null)
@@ -34,6 +37,10 @@ public class SettingsMenu : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="_action"></param>
     private void OnChangeKeyBindClick(string _action) => selectedAction = _action;
 
     private void Update()
@@ -50,6 +57,10 @@ public class SettingsMenu : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
     private KeyCode GetPressedKey()
     {
         foreach (KeyCode _keyCode in System.Enum.GetValues(typeof(KeyCode)))
@@ -62,6 +73,11 @@ public class SettingsMenu : MonoBehaviour
         return KeyCode.None;
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="_action"></param>
+    /// <param name="_keyCode"></param>
     private void UpdateKeyText(string _action, KeyCode _keyCode)
     {
         switch (_action)
