@@ -1,23 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MusicManagers : MonoBehaviour
 {
+    public static MusicManagers instance;
+
     [SerializeField] private List<AudioClip> _backgroundMusic;
     private AudioSource _audioSource;
-
+    [SerializeField] private PlayerClassStats settings;
     private int lastIndex;
 
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        instance = this;
     }
 
     private void Start()
     {
         _audioSource = GetComponent<AudioSource>();
         StartCoroutine(PlayMusic());
+        ChangeVolume();
     }
 
     private IEnumerator PlayMusic()
@@ -33,5 +37,10 @@ public class MusicManagers : MonoBehaviour
         yield return new WaitForSeconds(_audioSource.clip.length);
         lastIndex = index;
         StartCoroutine(PlayMusic());
+    }
+
+    public void ChangeVolume()
+    {
+        _audioSource.volume = settings.health;
     }
 }
