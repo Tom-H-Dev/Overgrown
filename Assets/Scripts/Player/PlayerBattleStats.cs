@@ -35,6 +35,10 @@ public class PlayerBattleStats : MonoBehaviour
         curSPD = playerStats.speed;
     }
 
+    /// <summary>
+    /// Change the health of the player
+    /// </summary>
+    /// <param name="l_hpDifference"></The difference that changes the health>
     public void ChangeHpFromOther(float l_hpDifference)
     {
         float l_checkIfHealing = curHP - l_hpDifference;
@@ -61,6 +65,10 @@ public class PlayerBattleStats : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Sends the death message and sets back to main menu
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator DeathMessage()
     {
         _combatMenu.SetActive(false);
