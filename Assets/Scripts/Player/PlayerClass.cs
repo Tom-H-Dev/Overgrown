@@ -35,14 +35,6 @@ public abstract class PlayerClass : MonoBehaviour
         uiManager = UIManager.instance;
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            ChangePlayerExp(60);
-        }
-    }
-
     public virtual void ChangePlayerExp(int l_orbAmount)
     {
         int l_expIncrease = l_orbAmount * expOrbAmount;
