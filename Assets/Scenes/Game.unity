@@ -8731,7 +8731,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 571997293}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.18528499, y: 0.000000011186369, z: -0.0000000021091884, w: 0.98268485}
+  m_LocalRotation: {x: 0.18528499, y: 4.7644113e-15, z: -1.6807419e-15, w: 0.98268485}
   m_LocalPosition: {x: -2.06, y: 4.66, z: -9.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -34243,7 +34243,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1991980478}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.18528499, y: 0.000000011186369, z: -0.0000000021091884, w: 0.98268485}
+  m_LocalRotation: {x: 0.18528499, y: 4.7644113e-15, z: -1.6807419e-15, w: 0.98268485}
   m_LocalPosition: {x: -2.06, y: 4.66, z: -9.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -37304,6 +37304,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6820320318989746363, guid: 2aeea0df0dddb1b4b9df75f6553605bc,
+        type: 3}
+      propertyPath: _backgroundMusic.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6820320318989746363, guid: 2aeea0df0dddb1b4b9df75f6553605bc,
+        type: 3}
+      propertyPath: _backgroundMusic.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: a8e17fa56141c0a40a3078ad93f108fc, type: 3}
+    - target: {fileID: 6820320318989746363, guid: 2aeea0df0dddb1b4b9df75f6553605bc,
+        type: 3}
+      propertyPath: _backgroundMusic.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d7ae51500f556240842b41d3c42d222, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
