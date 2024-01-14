@@ -18,7 +18,7 @@ public class PauseMenu : MonoBehaviour
 
     public void ContinueGame()
     {
-        _pausedCanvas.SetActive(false);
         GameManager.instance.canMovePlayer = true;
+        _pausedCanvas.SetActive(false);
     }
 }
