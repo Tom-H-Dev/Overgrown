@@ -27,7 +27,7 @@ public class SettingsMenu : MonoBehaviour
     /// <summary>
     /// 
     /// </summary>
-    /// <param name="_button"></param>
+    /// <param name="_button"></param> 
     /// <param name="_action"></param>
     private void AddButtonListener(Button _button, string _action)
     {
