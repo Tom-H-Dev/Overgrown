@@ -5,17 +5,20 @@ using UnityEngine;
 
 public class LoadChunkArea : MonoBehaviour
 {
-    [SerializeField] private GameObject _loadBuildingChunk, _unloadBuildingChunk, _otherAreaLoader;
-
+    [SerializeField] private List<GameObject> _loadChunks, _unloadChuncks;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.TryGetComponent(out PlayerMovement l_player))
         {
-            _loadBuildingChunk.SetActive(true);
-            _unloadBuildingChunk.SetActive(false);
-            _otherAreaLoader.SetActive(true);
-            gameObject.SetActive(false);
+            for (int i = 0; i < _loadChunks.Count; i++)
+            {
+                _loadChunks[i].SetActive(true);
+            }
+            for (int i = 0; i < _unloadChuncks.Count; i++)
+            {
+                _unloadChuncks[i].SetActive(false);
+            }
         }
     }
 }

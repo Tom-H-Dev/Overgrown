@@ -15,3 +15,4 @@ MonoBehaviour:
   inventory: 98
   sprint: 304
   interact: 101
+  pause: 27

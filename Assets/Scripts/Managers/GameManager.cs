@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
         return null;
     }
 
-    public void OnCombatComplete(bool l_inFinish)
+    public void OnCombatComplete(bool l_inFinish, List<GameObject> l_enemiesVisual)
     {
         if (l_inFinish)
         {
@@ -53,6 +53,11 @@ public class GameManager : MonoBehaviour
             canMovePlayer = true;
             combatCanvas.SetActive(false);
             TurnManager.instance.gameObject.SetActive(false);
+
+            for (int i = 0; i < l_enemiesVisual.Count; i++)
+            {
+                l_enemiesVisual[i].SetActive(false);
+            }
 
             PlayerClass l_player = FindObjectOfType<PlayerClass>();
             l_player.ChangePlayerExp(70);

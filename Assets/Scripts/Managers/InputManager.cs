@@ -29,10 +29,5 @@ public class InputManager : MonoBehaviour
         else { return false; }
     }
 
-    public void ChangeKeyBinding(string _key, KeyCode _newKeyCode)
-    {
-        keyBinds.ChangeKey(_key, _newKeyCode);
-       
-        //Playerprefs
-    }
+    public void ChangeKeyBinding(string _key, KeyCode _newKeyCode) => keyBinds.ChangeKey(_key, _newKeyCode);
 }

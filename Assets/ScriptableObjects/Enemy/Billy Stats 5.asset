@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71a20b9be5a0dc740ab68a5a2fcd4ae1, type: 3}
   m_Name: Billy Stats 5
   m_EditorClassIdentifier: 
-  baseHP: 30
-  baseMP: 1
-  baseATK: 1
-  baseDEF: 1
-  baseSPD: 5
+  baseHP: 100
+  baseMP: 3
+  baseATK: 4
+  baseDEF: 3
+  baseSPD: 10

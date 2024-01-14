@@ -104,8 +104,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 6.41}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 32.74893, y: 2.1687818, z: 12.091797}
+  m_Center: {x: -2.4240112, y: -0.5843908, z: -2.0461478}
 --- !u!114 &2719412972455993457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,27 +124,31 @@ MonoBehaviour:
   _enemy2: {fileID: 0}
   _attackStartButton: {fileID: 0}
   _attackScript: {fileID: 0}
+  _spawnArea: {x: 230, y: 3, z: 150}
   hasEncountered: 0
-  finish: 1
+  finish: 0
   _enemyNames:
   - Billy
   - Henk
   - Koen
   - 2
   - 22
-  - 222
   _enemyStats:
   - {fileID: 11400000, guid: 1178f16c78822f140a475fa24715f790, type: 2}
   - {fileID: 11400000, guid: b57c133d47bb91040b9512c2a0fc0570, type: 2}
   - {fileID: 11400000, guid: f23e13bc4fdf80e44b00727dd9e1d7c4, type: 2}
   - {fileID: 11400000, guid: e5f78940f8a2dd348a63f5eeadea3108, type: 2}
   - {fileID: 11400000, guid: 0aa1edb9fc17fc74787eaba998480724, type: 2}
-  - {fileID: 11400000, guid: 4c41c62b450cd1e48960a92e3f0fd7b9, type: 2}
   _enemyVisuals:
   - {fileID: 21300000, guid: e4cff99d22890a344aa10a384b88e0ab, type: 3}
   - {fileID: 21300000, guid: 17becf3b0cc450b4698f9101bf0f3547, type: 3}
   - {fileID: 21300000, guid: c70d04bb39465bc43badb56c264eeccb, type: 3}
   - {fileID: 21300000, guid: 8b3c8dda3456a8a49a1638362fa5b804, type: 3}
   - {fileID: 21300000, guid: 055760870c0add24fa4cabf295e1cd0d, type: 3}
-  - {fileID: 21300000, guid: 6c32d9589ecd8214080f7251ce8c3122, type: 3}
+  _enemyPrefabs:
+  - {fileID: 8967271736402781099, guid: 91ad71fb1ee43bd488795a7d8019ccca, type: 3}
+  - {fileID: 1692616308642643358, guid: 7c62e8da5855a714483184d816a62e11, type: 3}
+  - {fileID: 9050816439230831238, guid: e58098558c211034b87a208a74d5bdaa, type: 3}
+  - {fileID: 5827123798924413698, guid: 85512a746316c934b9154ec8751e0df5, type: 3}
+  - {fileID: 4859490841301204090, guid: 200981d91bd866041b18010e87c87b0e, type: 3}
   _enemyStat: {fileID: 0}

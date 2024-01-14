@@ -13,6 +13,7 @@ public abstract class Potion : MonoBehaviour
     public GameObject potionCard;
     public TextMeshProUGUI potionAmountText;
     public string potionDescription;
+    public Sprite img;
 
 
     public virtual void OnPotionUse()
@@ -33,6 +34,7 @@ public abstract class Potion : MonoBehaviour
         InfoPageItem.instance.itemDescription.text = potionDescription;
         InfoPageItem.instance.potionType = potionType;
         InfoPageItem.instance.potionScript = this;
+        InfoPageItem.instance.itemImage.sprite = img;
     }
 
     public virtual void AddPotionToInv(float l_amount, Potion l_type)
