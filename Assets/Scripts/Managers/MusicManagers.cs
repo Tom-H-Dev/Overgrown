@@ -11,6 +11,7 @@ public class MusicManagers : MonoBehaviour
     private AudioSource _audioSource;
     [SerializeField] private PlayerClassStats settings;
     private int lastIndex;
+    [SerializeField] private Slider volumeSlider;
 
     private void Awake()
     {
@@ -22,6 +23,10 @@ public class MusicManagers : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
         StartCoroutine(PlayMusic());
         ChangeVolume();
+        if (volumeSlider != null)
+        {
+            volumeSlider.value = settings.health;
+        }
     }
 
     private IEnumerator PlayMusic()
@@ -42,5 +47,10 @@ public class MusicManagers : MonoBehaviour
     public void ChangeVolume()
     {
         _audioSource.volume = settings.health;
+    }
+
+    public void SettingsChangeVolume()
+    {
+        settings.health = volumeSlider.value;
     }
 }
