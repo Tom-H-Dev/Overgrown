@@ -18,8 +18,15 @@ public class Roaming : MonoBehaviour
 
     private void MoveTowardsTarget()
     {
-        transform.position = Vector3.MoveTowards(transform.position, _targetPos, _moveSpeed * Time.deltaTime);
-        if (Vector3.Distance(transform.position, _targetPos) < 0.1f)
+        Vector3 l_newPos = Vector3.MoveTowards(transform.position, _targetPos, _moveSpeed * Time.deltaTime);
+
+        if (_moveArea.bounds.Contains(l_newPos))
+        {
+            // Align the bottom of the enemy with the bottom of the collider
+            l_newPos.y = _moveArea.bounds.min.y + (GetComponent<Collider>().bounds.extents.y);
+            transform.position = l_newPos;
+        }
+        else
         {
             MoveToRandomPosition();
         }
@@ -27,8 +34,12 @@ public class Roaming : MonoBehaviour
 
     private void MoveToRandomPosition()
     {
-        float l_randomX = Random.Range(_moveArea.bounds.min.x, _moveArea.bounds.max.x);
-        float l_randomZ = Random.Range(_moveArea.bounds.min.z, _moveArea.bounds.max.z);
-        _targetPos = new Vector3(l_randomX, transform.position.y, l_randomZ);
+        float randomX = Random.Range(_moveArea.bounds.min.x, _moveArea.bounds.max.x);
+        float randomZ = Random.Range(_moveArea.bounds.min.z, _moveArea.bounds.max.z);
+
+        // Set y-coordinate to the bottom of the collider plus half the height of the enemy
+        float yPos = _moveArea.bounds.min.y + (GetComponent<Collider>().bounds.extents.y);
+
+        _targetPos = new Vector3(randomX, yPos, randomZ);
     }
 }
