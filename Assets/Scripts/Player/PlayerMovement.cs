@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Timeline;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -49,4 +48,13 @@ public class PlayerMovement : MonoBehaviour
 
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag("Finish"))
+        {
+            MainMenu.instance.ToScene("LoadingScreen");
+        }
+    }
+
 }

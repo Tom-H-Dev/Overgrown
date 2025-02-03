@@ -19,6 +19,9 @@ public class MainMenu : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Checks if you are playing in the editor then goes out of playmode else closes the application
+    /// </summary>
     public void ExitGame()
     {
 #if UNITY_EDITOR
@@ -27,14 +30,9 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
+    /// <summary>
+    /// Go to a different scene
+    /// </summary>
+    /// <param name="SceneName"></param>The name of the scene you want to load in to
     public void ToScene(string SceneName) => SceneManager.LoadScene(SceneName);
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.name == "Player")
-        {
-            ToScene("Alpha");
-        }
-    }
-
 }

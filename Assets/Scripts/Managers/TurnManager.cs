@@ -122,49 +122,49 @@ public class TurnManager : MonoBehaviour
                 attackLevel2.SetActive(false);
                 attackLevel4.SetActive(false);
                 attackLevel6.SetActive(false);
-                defense.SetActive(true);
+                defense.SetActive(false);
                 break;
             case 2:
                 attackLevel1.SetActive(true);
                 attackLevel2.SetActive(true);
                 attackLevel4.SetActive(false);
                 attackLevel6.SetActive(false);
-                defense.SetActive(true);
+                defense.SetActive(false);
                 break;
             case 3:
                 attackLevel1.SetActive(true);
                 attackLevel2.SetActive(true);
                 attackLevel4.SetActive(false);
                 attackLevel6.SetActive(false);
-                defense.SetActive(true);
+                defense.SetActive(false);
                 break;
             case 4:
                 attackLevel1.SetActive(true);
                 attackLevel2.SetActive(true);
                 attackLevel4.SetActive(true);
                 attackLevel6.SetActive(false);
-                defense.SetActive(true);
+                defense.SetActive(false);
                 break;
             case 5:
                 attackLevel1.SetActive(true);
                 attackLevel2.SetActive(true);
                 attackLevel4.SetActive(true);
                 attackLevel6.SetActive(false);
-                defense.SetActive(true);
+                defense.SetActive(false);
                 break;
             case 6:
                 attackLevel1.SetActive(true);
                 attackLevel2.SetActive(true);
                 attackLevel4.SetActive(true);
-                attackLevel6.SetActive(true);
-                defense.SetActive(true);
+                attackLevel6.SetActive(false);
+                defense.SetActive(false);
                 break;
             case >= 7:
                 attackLevel1.SetActive(true);
                 attackLevel2.SetActive(true);
                 attackLevel4.SetActive(true);
-                attackLevel6.SetActive(true);
-                defense.SetActive(true);
+                attackLevel6.SetActive(false);
+                defense.SetActive(false);
                 break;
         }
     }

@@ -29,6 +29,11 @@ public class PlayerInventory : MonoBehaviour
             _isMenuActive = true;
             OnChangePotionAmount();
         }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            OnChangePotionAmount();
+        }
     }
 
     public void ChangeMenuActive(bool l_value)
